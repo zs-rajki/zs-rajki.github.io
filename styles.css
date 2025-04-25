@@ -42,8 +42,28 @@ main {
     padding-top: 70px;
 }
 
-#greeting {
+.typing {
     color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 300;
+    font-size: 3rem;
+    border-right: 15px solid white;
+    animation: blinking 1s steps(1, end) infinite, typing 10s steps(30, end) infinite;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes blinking {
+    0% { border-color: transparent }
+    50% { border-color: white }
+    100% { border-color: transparent }
+}
+@keyframes typing {
+    0% { width: 0 }
+    25% { width: 50% }
+    40% { width: 50% }
+    60% { width: 100% }
+    100% { width: 100% }
 }
 
 main p {
