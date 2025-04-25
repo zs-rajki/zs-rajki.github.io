@@ -1,0 +1,52 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0A0A0A;
+    margin: 0;
+}
+
+nav {
+    background-color: #0A0A0A;
+    box-shadow: 0 0 50px #FFC676;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    float: left;
+}
+nav a {
+    color: #858585;
+    text-decoration: none;
+    font-family: "Geist Mono", monospace;
+    font-weight: 200;
+    font-size: 1rem;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+nav a:hover {
+    color: #e4dacc;
+}
+
+main {
+    margin: 10px;
+    padding-top: 70px;
+}
+
+#greeting {
+    color: white;
+}
+
+main p {
+    color: white;
+    font-size: 30px;
+}
