@@ -55,6 +55,7 @@ section {
     font-weight: 300;
     font-size: 3rem;
     border-right: 20px solid white;
+    margin: 0;
     overflow: hidden;
     white-space: nowrap;
 }
