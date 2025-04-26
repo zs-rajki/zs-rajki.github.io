@@ -36,14 +36,17 @@ nav a {
 nav a:hover {
     color: #e4dacc;
 }
+nav a.active {
+    color: #FFC676
+}
 
 main {
     margin: 20px;
-    padding-top: 70px;
 }
 
 section {
-    padding-top: 70px;
+    padding-top: 80px;
+    min-height: 100vh;
 }
 
 .typing {
