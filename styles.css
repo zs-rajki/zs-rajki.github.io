@@ -46,14 +46,14 @@ main {
 }
 
 section {
-    padding-top: 100px;
+    padding-top: 80px;
     min-height: 100vh;
 }
 .section_title {
     display: flex;
     align-items: center;
     width: 100%;
-    margin: 0 0 30px;
+    margin: 0 0 25px;
     gap: 20px; /* space between title and line */
 }
 .section_title h1 {
@@ -69,17 +69,11 @@ section {
     height: 2.5px;
     background-color: #858585;
     flex: 0 0 5%;
-    position: relative; /* Important for transform */
-    top: 0;
-    transform: translateY(-15px);
 }
 .section_title .line2 {
     height: 2.5px;
     background-color: #858585;
     flex: 1;
-    position: relative; /* Important for transform */
-    top: 0;
-    transform: translateY(-15px);
 }
   
 
@@ -87,7 +81,7 @@ section {
     color: white;
     font-family: "JetBrains Mono", monospace;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 4rem;
     border-right: 20px solid white;
     margin: 0;
     overflow: hidden;
