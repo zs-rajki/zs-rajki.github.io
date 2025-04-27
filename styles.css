@@ -150,6 +150,7 @@ section {
 .selected {
     box-shadow: 0 0 30px #FFC676;
     background-color: #0A0A0A; /* Darken background to show selection */
+    border: none;
     transform: scale(1.05); /* Slightly enlarge the card */
     transition: all 0.3s ease; /* Smooth transition for all changes */
 }
