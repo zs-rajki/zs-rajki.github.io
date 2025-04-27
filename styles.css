@@ -12,6 +12,7 @@ nav {
     box-shadow: 0 0 50px #FFC676;
     height: 50px;
     width: 100%;
+    z-index: 1000;
     position: fixed;
     top: 0;
 }
@@ -125,6 +126,117 @@ section {
     60% { width: 100% }
     100% { width: 100% }
 }
+
+#card_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 20px;
+}
+.project_card {
+    width: 400px;
+    height: 200px;
+    border-left: 1px solid #858585;
+    border-right: 1px solid #858585;
+    position: relative;
+    padding: 20px;
+    margin: 15px;
+    overflow: hidden;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.selected {
+    box-shadow: 0 0 30px #FFC676;
+    background-color: #0A0A0A; /* Darken background to show selection */
+    transform: scale(1.05); /* Slightly enlarge the card */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Card content styles */
+.card_content {
+    position: relative;
+}
+.card_header {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: 16px;
+    color: #858585
+}
+.card_title {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+.card_description {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #858585;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.project_card:hover {
+    border-top: 1px solid #858585;
+    border-bottom: 1px solid #858585;
+    background: linear-gradient(to bottom, #151616, #0A0A0A);
+}
+.project_card:hover .corner {
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+}
+#top_left {
+    top: 0;
+    left: 0;
+}
+#top_right {
+    top: 0;
+    right: 0;
+}
+#bottom_left {
+    bottom: 0;
+    left: 0;
+}
+#bottom_right {
+    bottom: 0;
+    right: 0;
+}
+
+#project_detail {
+    margin-top: 10px;
+    padding: 30px;
+    background: linear-gradient(to top, #151616, #0A0A0A);
+    border-left: 1px solid #858585;
+    border-right: 1px solid #858585;
+    border-bottom: 1px solid #858585;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  .hidden {
+    display: none;
+  }
+  #detail_title {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  #detail_description {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+  }
 
 main p {
     color: white;

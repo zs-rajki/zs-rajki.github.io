@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <title>Zsombor Rajki</title>
     </head>
@@ -46,6 +46,45 @@
             </section>
             <section id="projects_section">
                 <h1>Projects</h1>
+                <div id="card_container">
+                    <div class="project_card" data-project="1">
+                        <div class="corner" id="top_left"></div>
+                        <div class="corner" id="top_right"></div>
+                        <div class="corner" id="bottom_left"></div>
+                        <div class="corner" id="bottom_right"></div>
+                        <div class="card_content">
+                            <span class="card_header">[ skills, tools ]</span>
+                            <h2 class="card_title">Project Name</h2>
+                            <p class="card_description">Short description about the project...</p>
+                        </div>
+                    </div>
+                    <div class="project_card" data-project="2">
+                        <div class="corner" id="top_left"></div>
+                        <div class="corner" id="top_right"></div>
+                        <div class="corner" id="bottom_left"></div>
+                        <div class="corner" id="bottom_right"></div>
+                        <div class="card_content">
+                            <span class="card_header">[ skills, tools ]</span>
+                            <h2 class="card_title">Project Name</h2>
+                            <p class="card_description">Short description about the project...</p>
+                        </div>
+                    </div>
+                    <div class="project_card" data-project="3">
+                        <div class="corner" id="top_left"></div>
+                        <div class="corner" id="top_right"></div>
+                        <div class="corner" id="bottom_left"></div>
+                        <div class="corner" id="bottom_right"></div>
+                        <div class="card_content">
+                            <span class="card_header">[ skills, tools ]</span>
+                            <h2 class="card_title">Project Name</h2>
+                            <p class="card_description">Short description about the project...</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="project_detail" class="hidden">
+                    <h2 id="detail_title">hah</h2>
+                    <p id="detail_description">ho</p>
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
@@ -136,6 +175,60 @@
 
             sections.forEach(s => observer.observe(s));
         </script>
+        <script>
+            const projectCards = document.querySelectorAll('.project_card');
+            const projectDetail = document.getElementById('project_detail');
+            const detailTitle = document.getElementById('detail_title');
+            const detailDescription = document.getElementById('detail_description');
           
-        </body>
+            // Dummy data for now
+            const projectData = {
+              1: {
+                title: "Project 1: Awesome Website",
+                description: "This project is about creating a fully responsive modern website using HTML, CSS, and JavaScript."
+              },
+              2: {
+                title: "Project 2: Mobile App",
+                description: "This project focuses on developing a cross-platform mobile application using Flutter."
+              },
+              3: {
+                title: "Project 3: Data Dashboard",
+                description: "An interactive dashboard to display real-time analytics data using React and D3.js."
+              }
+            };
+          
+            let currentProjectId = null; // Track the currently open project
+          
+            projectCards.forEach(card => {
+              card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project');
+                
+                // If clicking the same project again, hide the details and remove the selected class
+                if (currentProjectId === projectId) {
+                  projectDetail.classList.add('hidden');
+                  card.classList.remove('selected'); // Remove selected class from the card
+                  currentProjectId = null;
+                  return; // Exit early
+                }
+          
+                // Otherwise, update the details with the new project's info
+                const project = projectData[projectId];
+                detailTitle.textContent = project.title;
+                detailDescription.textContent = project.description;
+          
+                // Show the detail view
+                projectDetail.classList.remove('hidden');
+                card.classList.add('selected'); // Add the selected class to the card
+          
+                // Hide the previous project's details if any
+                if (currentProjectId !== null) {
+                  const previousCard = document.querySelector(`[data-project="${currentProjectId}"]`);
+                  previousCard.classList.remove('selected'); // Remove selected class from the old card
+                }
+          
+                currentProjectId = projectId; // Update the current project ID
+              });
+            });
+        </script>
+    </body>
 </html>
