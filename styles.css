@@ -128,13 +128,24 @@ section {
 }
 
 #card_container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 20px 20px;
+    width: 95vw; /* 90% of the viewport width */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent cards from wrapping to the next line */
+    padding: 20px;
+    margin: 25px auto; /* Center the container */
+    box-sizing: border-box;
 }
+#card_container::-webkit-scrollbar {
+    height: 8px;
+}
+ #card_container::-webkit-scrollbar-thumb {
+    background-color: #858585;
+    border-radius: 4px;
+}
+ #card_container::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+  
 .project_card {
     width: 400px;
     height: 200px;
@@ -142,7 +153,7 @@ section {
     border-right: 1px solid #858585;
     position: relative;
     padding: 20px;
-    margin: 15px;
+    margin: 30px;
     overflow: hidden;
     display: inline-block;
     box-sizing: border-box;
@@ -157,19 +168,21 @@ section {
 /* Card content styles */
 .card_content {
     position: relative;
+    height: 100%;
 }
 .card_header {
     font-family: "Geist Mono", monospace;
     font-weight: 400;
     font-size: 16px;
-    color: #858585
+    color: #858585;
+    margin-bottom: 0;
 }
 .card_title {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: 36px;
     color: white;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 .card_description {
@@ -177,13 +190,16 @@ section {
     font-weight: 400;
     font-size: 24px;
     color: #858585;
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin-top: 15px;
+    word-wrap: break-word; /* Break long words if they exceed width */
+    overflow-wrap: break-word; /* Ensures long words break onto next line */
+    white-space: normal; /* Allows the text to wrap normally */
+    max-height: calc(100% - 40px); /* Prevent the description from exceeding the card height */
+    overflow: hidden; /* Prevent overflow beyond the card */
 }
 
 .project_card:hover {
-    border-top: 1px solid #858585;
-    border-bottom: 1px solid #858585;
+    border: 1px solid #858585;
     background: linear-gradient(to bottom, #151616, #0A0A0A);
 }
 .project_card:hover .corner {
@@ -210,34 +226,30 @@ section {
 }
 
 #project_detail {
-    margin-top: 10px;
     padding: 30px;
     background: linear-gradient(to top, #151616, #0A0A0A);
-    border-left: 1px solid #858585;
-    border-right: 1px solid #858585;
-    border-bottom: 1px solid #858585;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    border: 1px solid #858585;
+    width: 90vw;
+    margin: auto;
     box-sizing: border-box;
     border-radius: 4px;
-  }
-  .hidden {
+}
+.hidden {
     display: none;
-  }
-  #detail_title {
+}
+#detail_title {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: 36px;
     color: white;
     margin-bottom: 20px;
-  }
-  #detail_description {
+}
+#detail_description {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: 30px;
     color: white;
-  }
+}
 
 main p {
     color: white;
