@@ -82,7 +82,7 @@ section {
     font-family: "JetBrains Mono", monospace;
     font-weight: 400;
     font-size: 4rem;
-    border-right: 20px solid white;
+    border-right: 25px solid white;
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -152,6 +152,20 @@ section {
     40% { width: 0% }
     60% { width: 100% }
     100% { width: 100% }
+}
+
+.intro {
+    width: 50vw;
+    border-left: 4px solid #858585;
+}
+.intro p {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 15px;
 }
 
 #card_container {
