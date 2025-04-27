@@ -28,7 +28,7 @@ nav a {
     color: #858585;
     text-decoration: none;
     font-family: "Geist Mono", monospace;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 1rem;
     padding: 15px;
     display: block;
@@ -42,18 +42,51 @@ nav a.active {
 }
 
 main {
-    margin: 20px;
+    margin: 40px;
 }
 
 section {
-    padding-top: 80px;
+    padding-top: 100px;
     min-height: 100vh;
 }
+.section_title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 30px;
+    gap: 20px; /* space between title and line */
+}
+.section_title h1 {
+    color: white;
+    font-family: "Geist", sans-serif;
+    font-weight: 600;
+    font-size: 5rem;
+    white-space: nowrap; /* Prevent title from wrapping */
+    flex-shrink: 0;
+    line-height: 1;
+}
+.section_title .line1 {
+    height: 2.5px;
+    background-color: #858585;
+    flex: 0 0 5%;
+    position: relative; /* Important for transform */
+    top: 0;
+    transform: translateY(-15px);
+}
+.section_title .line2 {
+    height: 2.5px;
+    background-color: #858585;
+    flex: 1;
+    position: relative; /* Important for transform */
+    top: 0;
+    transform: translateY(-15px);
+}
+  
 
 .typing {
     color: white;
     font-family: "JetBrains Mono", monospace;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 3rem;
     border-right: 20px solid white;
     margin: 0;
@@ -229,7 +262,7 @@ section {
     padding: 30px;
     background: linear-gradient(to top, #151616, #0A0A0A);
     border: 1px solid #858585;
-    width: 90vw;
+    width: 95vw;
     margin: auto;
     box-sizing: border-box;
     border-radius: 4px;

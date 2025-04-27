@@ -45,9 +45,13 @@
                 </div>
             </section>
             <section id="projects_section">
-                <h1>Projects</h1>
+                <div class="section_title">
+                    <div class="line1"></div>
+                    <h1>Projects</h1>
+                    <div class="line2"></div>
+                </div>
                 <div id="card_container">
-                    <div class="project_card" data-project="1">
+                    <div class="project_card" project-data="1">
                         <div class="corner" id="top_left"></div>
                         <div class="corner" id="top_right"></div>
                         <div class="corner" id="bottom_left"></div>
@@ -58,7 +62,7 @@
                             <p class="card_description">Short description about the project...bla bla bla</p>
                         </div>
                     </div>
-                    <div class="project_card" data-project="2">
+                    <div class="project_card" project-data="2">
                         <div class="corner" id="top_left"></div>
                         <div class="corner" id="top_right"></div>
                         <div class="corner" id="bottom_left"></div>
@@ -69,7 +73,7 @@
                             <p class="card_description">Short description about the project...</p>
                         </div>
                     </div>
-                    <div class="project_card" data-project="3">
+                    <div class="project_card" project-data="3">
                         <div class="corner" id="top_left"></div>
                         <div class="corner" id="top_right"></div>
                         <div class="corner" id="bottom_left"></div>
@@ -94,7 +98,11 @@
                 </p>
             </section>
             <section id="vibe_section">
-                <h1>Vibe</h1>
+                <div class="section_title">
+                    <div class="line1"></div>
+                    <h1>Vibe</h1>
+                    <div class="line2"></div>
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
@@ -104,7 +112,11 @@
                 </p>
             </section>
             <section id="blog_section">
-                <h1>Blog</h1>
+                <div class="section_title">
+                    <div class="line1"></div>
+                    <h1>Blog</h1>
+                    <div class="line2"></div>
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
@@ -114,7 +126,11 @@
                 </p>
             </section>
             <section id="contact_section">
-                <h1>Contact</h1>
+                <div class="section_title">
+                    <div class="line1"></div>
+                    <h1>Contact</h1>
+                    <div class="line2"></div>
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
@@ -181,7 +197,6 @@
             const detailTitle = document.getElementById('detail_title');
             const detailDescription = document.getElementById('detail_description');
           
-            // Dummy data for now
             const projectData = {
               1: {
                 title: "Project 1: Awesome Website",
@@ -201,7 +216,7 @@
           
             projectCards.forEach(card => {
               card.addEventListener('click', () => {
-                const projectId = card.getAttribute('data-project');
+                const projectId = card.getAttribute('project-data');
                 
                 // If clicking the same project again, hide the details and remove the selected class
                 if (currentProjectId === projectId) {
@@ -222,7 +237,7 @@
           
                 // Hide the previous project's details if any
                 if (currentProjectId !== null) {
-                  const previousCard = document.querySelector(`[data-project="${currentProjectId}"]`);
+                  const previousCard = document.querySelector(`[project-data="${currentProjectId}"]`);
                   previousCard.classList.remove('selected'); // Remove selected class from the old card
                 }
           
