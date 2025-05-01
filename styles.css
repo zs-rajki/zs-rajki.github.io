@@ -121,7 +121,7 @@ nav a.active {
 ===================================== */
 
 main {
-    margin: min(3rem, 0);
+    margin: min(3rem, 2.5%);
 }
 
 section {
