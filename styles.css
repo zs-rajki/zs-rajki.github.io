@@ -5,7 +5,7 @@
    Table of Contents:
    1. Base
    2. Navigation Bar
-   3. Layout / Grid
+   3. Main & Sections
    4. Components
       4.1 Buttons
       4.2 Cards
@@ -122,41 +122,40 @@ nav a.active {
 
 
 /* =====================================
-    3. Layout / Grid
+    3. Main & Sections
 ===================================== */
 
 main {
-    margin: 40px;
+    margin: min(3rem, 4%);
 }
 
 section {
-    padding-top: 80px;
+    padding-top: 5rem;
     min-height: 100vh;
 }
+
 .section_title {
     display: flex;
     align-items: center;
     width: 100%;
-    margin: 0 0 25px;
-    gap: 20px; /* space between title and line */
+    margin: 0 0 1.6rem;
+    gap: min(1.25rem, 2%); /* space between title and line */
 }
 .section_title h1 {
-    color: white;
+    color: var(--primary);
     font-family: "Geist", sans-serif;
     font-weight: 600;
-    font-size: 5rem;
+    font-size: clamp(2rem, calc(6vw + 0.5rem), 5rem);
     white-space: nowrap; /* Prevent title from wrapping */
-    flex-shrink: 0;
-    line-height: 1;
 }
 .section_title .line1 {
-    height: 2.5px;
-    background-color: #858585;
-    flex: 0 0 5%;
+    height: min(0.3rem, 0.8vw);
+    background-color: var(--secondary);
+    flex: 0 0 max(5%, 3rem);
 }
 .section_title .line2 {
-    height: 2.5px;
-    background-color: #858585;
+    height: min(0.3rem, 0.8vw);
+    background-color: var(--secondary);
     flex: 1;
 }
 
