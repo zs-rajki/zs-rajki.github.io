@@ -6,12 +6,7 @@
    1. Base
    2. Navigation Bar
    3. Main & Sections
-   4. Components
-      4.1 Buttons
-      4.2 Cards
-      4.3 Forms
-   5. Utilities
-   6. Responsive Media Queries
+   4. About me
 ===================================== */
 
 
@@ -148,31 +143,80 @@ section {
     font-size: clamp(2rem, calc(6vw + 0.5rem), 5rem);
     white-space: nowrap; /* Prevent title from wrapping */
 }
-.section_title .line1 {
+.section_title #before-line {
     height: min(0.3rem, 0.8vw);
     background-color: var(--secondary);
     flex: 0 0 max(5%, 3rem);
 }
-.section_title .line2 {
+.section_title #after-line {
     height: min(0.3rem, 0.8vw);
     background-color: var(--secondary);
     flex: 1;
 }
 
-/* =====================================
-    4. Components
-===================================== */
-
-
-
 
 /* =====================================
-    5. Utilities
+    4. About me
 ===================================== */
 
+/* Typing title */
+.two-line-typing-title div{
+    display: inline-block
+}
+.two-line-typing-title h1 {
+    color: var(--primary);
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-size: clamp(2rem, calc(6vw + 0.5rem), 5rem);
+    border-right: clamp(1rem, calc(3vw + 0.25rem), 2.5rem) solid var(--primary);
+    overflow: hidden;
+    white-space: nowrap;
+}
+.two-line-typing-title #line-1 {
+    animation: blinkingL1 10s steps(1, end) infinite, typingL1 10s steps(24, end) infinite;
+}
+.two-line-typing-title #line-2 {
+    animation: blinkingL2 10s steps(1, end) infinite, typingL2 10s steps(24, end) infinite;
+}
 
-
-
-/* =====================================
-    6. Responsive Media Queries
-===================================== */
+@keyframes blinkingL1 {
+    0% { border-color: transparent; }
+    5% { border-color: var(--primary); }
+    10% { border-color: transparent; }
+    15% { border-color: var(--primary); }
+    20% { border-color: transparent; }
+    25% { border-color: var(--primary); }
+    30% { border-color: transparent; }
+    35% { border-color: var(--primary); }
+    /* after 40%, stay hidden */
+    40% { border-color: transparent; }
+    100% { border-color: transparent; }
+}
+@keyframes blinkingL2 {
+    0% { border-color: transparent; }
+    40% { border-color: var(--primary); }
+    45% { border-color: transparent; }
+    50% { border-color: var(--primary); }
+    55% { border-color: transparent; }
+    60% { border-color: var(--primary); }
+    65% { border-color: transparent; }
+    70% { border-color: var(--primary); }
+    75% { border-color: transparent; }
+    80% { border-color: var(--primary); }
+    85% { border-color: transparent; }
+    90% { border-color: var(--primary); }
+    95% { border-color: transparent; }
+    100% { border-color: transparent; }
+}
+@keyframes typingL1 {
+    0% { width: 0 }
+    25% { width: 100% }
+    100% { width: 100% }
+}
+@keyframes typingL2 {
+    0% { width: 0 }
+    40% { width: 0 }
+    60% { width: 100% }
+    100% { width: 100% }
+}
+/* END */
