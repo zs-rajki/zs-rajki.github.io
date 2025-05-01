@@ -1,0 +1,186 @@
+/* =====================================
+   📄 styles.css
+   My Website Stylesheet
+   -------------------------------------
+   Table of Contents:
+   1. Base
+   2. Navigation Bar
+   3. Layout / Grid
+   4. Components
+      4.1 Buttons
+      4.2 Cards
+      4.3 Forms
+   5. Utilities
+   6. Responsive Media Queries
+===================================== */
+
+
+/* =====================================
+   1. Base
+===================================== */
+
+:root {
+    /* Colors */
+    --background: #0A0A0A;
+    --primary: #FFFFFF;
+    --secondary: #858585;
+    --shine: #FFC676;
+    --hover: #E4DACC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0A0A0A;
+    margin: 0;
+}
+  
+  
+/* =====================================
+    2. Navigation Bar
+===================================== */
+
+nav {
+    background-color: var(--background);
+    box-shadow: 0 0 50px var(--shine);
+    height: 3.5rem;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+}
+
+.nav-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 100%;
+    scrollbar-width: none;  /* Firefox */
+}
+.nav-container ::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari */
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%;
+}
+nav li {
+    flex: 0 0 auto;
+    margin: auto 0.5rem;
+}
+nav a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: block;
+    text-align: center;
+}
+nav a:hover {
+    color: var(--hover);
+}
+nav a.active {
+    color: var(--shine);
+}
+
+@media (max-width: 768px) {
+    .nav-scroll {
+        overflow-x: visible;
+        white-space: normal;
+    }
+    nav ul {
+        justify-content: center;
+    }
+    nav li {
+        flex: 0 0 auto;
+        margin: auto 0;
+    }
+    nav a {
+        padding: 1rem;
+    }
+}
+
+
+/* =====================================
+    3. Layout / Grid
+===================================== */
+
+main {
+    margin: 40px;
+}
+
+section {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+.section_title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 25px;
+    gap: 20px; /* space between title and line */
+}
+.section_title h1 {
+    color: white;
+    font-family: "Geist", sans-serif;
+    font-weight: 600;
+    font-size: 5rem;
+    white-space: nowrap; /* Prevent title from wrapping */
+    flex-shrink: 0;
+    line-height: 1;
+}
+.section_title .line1 {
+    height: 2.5px;
+    background-color: #858585;
+    flex: 0 0 5%;
+}
+.section_title .line2 {
+    height: 2.5px;
+    background-color: #858585;
+    flex: 1;
+}
+
+/* =====================================
+    4. Components
+===================================== */
+
+
+
+
+/* =====================================
+    5. Utilities
+===================================== */
+
+
+
+
+/* =====================================
+    6. Responsive Media Queries
+===================================== */
+
+@media (min-width: 768px) {
+.container {
+    padding: 0 2rem;
+}
+}
+
+@media (min-width: 1024px) {
+.card {
+    display: flex;
+    flex-direction: row;
+}
+}
