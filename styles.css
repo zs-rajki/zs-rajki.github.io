@@ -40,7 +40,6 @@ html {
 
 body {
     background-color: #0A0A0A;
-    margin: 0;
 }
   
   
@@ -62,7 +61,6 @@ nav {
     overflow-x: auto;
     white-space: nowrap;
     height: 100%;
-    padding-left: 1rem;
     scrollbar-width: none;  /* Firefox */
 }
 .nav-container ::-webkit-scrollbar {
@@ -71,8 +69,6 @@ nav {
 
 nav ul {
     display: flex;
-    margin: 0;
-    padding: 0;
     list-style-type: none;
     height: 100%;
 }
@@ -80,6 +76,13 @@ nav li {
     flex: 0 0 auto;
     margin: auto 0.5rem;
 }
+nav li:first-child {
+    padding-left: 1rem;
+}
+nav li:last-child {
+    padding-right: 1rem;
+}
+
 nav a {
     color: var(--secondary);
     text-decoration: none;
