@@ -1,0 +1,322 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0A0A0A;
+    margin: 0;
+}
+
+nav {
+    background-color: #0A0A0A;
+    box-shadow: 0 0 50px #FFC676;
+    height: 50px;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    float: left;
+}
+nav a {
+    color: #858585;
+    text-decoration: none;
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+nav a:hover {
+    color: #e4dacc;
+}
+nav a.active {
+    color: #FFC676
+}
+
+main {
+    margin: 40px;
+}
+
+section {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+.section_title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 25px;
+    gap: 20px; /* space between title and line */
+}
+.section_title h1 {
+    color: white;
+    font-family: "Geist", sans-serif;
+    font-weight: 600;
+    font-size: 5rem;
+    white-space: nowrap; /* Prevent title from wrapping */
+    flex-shrink: 0;
+    line-height: 1;
+}
+.section_title .line1 {
+    height: 2.5px;
+    background-color: #858585;
+    flex: 0 0 5%;
+}
+.section_title .line2 {
+    height: 2.5px;
+    background-color: #858585;
+    flex: 1;
+}
+
+.intro_splitview {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.left_side {
+    width: 50%;
+}
+
+.typing {
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-size: 4rem;
+    border-right: 25px solid white;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.v1 {
+    animation: blinkingV1 1s steps(1, end) infinite, typingV1 10s steps(30, end) infinite;
+}
+
+.v2l1 {
+    animation: blinkingV2l1 10s steps(1, end) infinite, typingV2l1 10s steps(24, end) infinite;
+}
+.v2l2 {
+    animation: blinkingV2l2 10s steps(1, end) infinite, typingV2l2 10s steps(24, end) infinite;
+}
+
+@keyframes blinkingV1 {
+    0% { border-color: transparent }
+    50% { border-color: white }
+    100% { border-color: transparent }
+}
+@keyframes blinkingV2l1 {
+    0% { border-color: transparent; }
+    5% { border-color: white; }
+    10% { border-color: transparent; }
+    15% { border-color: white; }
+    20% { border-color: transparent; }
+    25% { border-color: white; }
+    30% { border-color: transparent; }
+    35% { border-color: white; }
+    /* after 40%, stay hidden */
+    40% { border-color: transparent; }
+    100% { border-color: transparent; }
+}
+@keyframes blinkingV2l2 {
+    0% { border-color: transparent; }
+    40% { border-color: white; }
+    45% { border-color: transparent; }
+    50% { border-color: white; }
+    55% { border-color: transparent; }
+    60% { border-color: white; }
+    65% { border-color: transparent; }
+    70% { border-color: white; }
+    75% { border-color: transparent; }
+    80% { border-color: white; }
+    85% { border-color: transparent; }
+    90% { border-color: white; }
+    95% { border-color: transparent; }
+    100% { border-color: transparent; }
+}
+@keyframes typingV1 {
+    0% { width: 0 }
+    25% { width: 50% }
+    40% { width: 50% }
+    60% { width: 100% }
+    100% { width: 100% }
+}
+
+@keyframes typingV2l1 {
+    0% { width: 0 }
+    25% { width: 100% }
+    100% { width: 100% }
+}
+
+@keyframes typingV2l2 {
+    0% { width: 0 }
+    40% { width: 0% }
+    60% { width: 100% }
+    100% { width: 100% }
+}
+
+.intro {
+    width: 50vw;
+    border-left: 4px solid #858585;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+.intro p {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 15px;
+    margin: 0;
+}
+.image_container img {
+    width: 33%;
+    margin-left: 20px;
+    position: absolute;
+    right: 8%;
+    bottom: 0;
+}
+
+#card_container {
+    width: 95vw; /* 90% of the viewport width */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent cards from wrapping to the next line */
+    padding: 20px;
+    margin: 25px auto; /* Center the container */
+    box-sizing: border-box;
+}
+#card_container::-webkit-scrollbar {
+    height: 8px;
+}
+ #card_container::-webkit-scrollbar-thumb {
+    background-color: #858585;
+    border-radius: 4px;
+}
+ #card_container::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+  
+.project_card {
+    width: 400px;
+    height: 200px;
+    border-left: 1px solid #858585;
+    border-right: 1px solid #858585;
+    position: relative;
+    padding: 20px;
+    margin: 30px;
+    overflow: hidden;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.selected {
+    box-shadow: 0 0 30px #FFC676;
+    background-color: #0A0A0A; /* Darken background to show selection */
+    border: none;
+    transform: scale(1.05); /* Slightly enlarge the card */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Card content styles */
+.card_content {
+    position: relative;
+    height: 100%;
+}
+.card_header {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: 16px;
+    color: #858585;
+    margin-bottom: 0;
+}
+.card_title {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.card_description {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #858585;
+    margin-top: 15px;
+    word-wrap: break-word; /* Break long words if they exceed width */
+    overflow-wrap: break-word; /* Ensures long words break onto next line */
+    white-space: normal; /* Allows the text to wrap normally */
+    max-height: calc(100% - 40px); /* Prevent the description from exceeding the card height */
+    overflow: hidden; /* Prevent overflow beyond the card */
+}
+
+.project_card:hover {
+    border: 1px solid #858585;
+    background: linear-gradient(to bottom, #151616, #0A0A0A);
+}
+.project_card:hover .corner {
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+}
+#top_left {
+    top: 0;
+    left: 0;
+}
+#top_right {
+    top: 0;
+    right: 0;
+}
+#bottom_left {
+    bottom: 0;
+    left: 0;
+}
+#bottom_right {
+    bottom: 0;
+    right: 0;
+}
+
+#project_detail {
+    padding: 30px;
+    background: linear-gradient(to top, #151616, #0A0A0A);
+    border: 1px solid #858585;
+    width: 95vw;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.hidden {
+    display: none;
+}
+#detail_title {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+}
+#detail_description {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
+main p {
+    color: white;
+    font-size: 30px;
+}
+
+h1 {
+    color: white;
+}
