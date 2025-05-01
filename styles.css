@@ -56,13 +56,13 @@ nav {
     z-index: 1000;
     position: fixed;
     top: 0;
-    overflow: hidden;
 }
 
 .nav-container {
     overflow-x: auto;
     white-space: nowrap;
     height: 100%;
+    padding-left: 1rem;
     scrollbar-width: none;  /* Firefox */
 }
 .nav-container ::-webkit-scrollbar {
@@ -98,12 +98,13 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
-    .nav-scroll {
-        overflow-x: visible;
-        white-space: normal;
+    .nav-container {
+         /* Fix cropped first link */
+        overflow-x: auto;
+        white-space: nowrap;
     }
     nav ul {
-        justify-content: center;
+        justify-content: flex-start;
     }
     nav li {
         flex: 0 0 auto;
@@ -111,6 +112,9 @@ nav a.active {
     }
     nav a {
         padding: 1rem;
+    }
+    nav a:hover {
+        color: var(--secondary);
     }
 }
 
@@ -171,16 +175,3 @@ section {
 /* =====================================
     6. Responsive Media Queries
 ===================================== */
-
-@media (min-width: 768px) {
-.container {
-    padding: 0 2rem;
-}
-}
-
-@media (min-width: 1024px) {
-.card {
-    display: flex;
-    flex-direction: row;
-}
-}
