@@ -145,7 +145,6 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores laudantium error voluptatem dolor ratione explicabo, iusto quia, sit eligendi, ab quisquam voluptas? At cumque facilis consectetur adipisci totam eaque?
                 </p>
             </section>
-            
         </main>
 
         <script>
@@ -168,11 +167,10 @@
             // 2) smooth-scroll + immediate highlight on click
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.getElementById(this.getAttribute('href').slice(1));
-                if (!target) return;
-                target.scrollIntoView({ behavior: 'smooth' });
-                setActive(target.id);
+                    e.preventDefault();
+                    const target = document.getElementById(this.getAttribute('href').slice(1));
+                    if (!target) return;
+                    target.scrollIntoView({ behavior: 'smooth' });
                 });
             });
 
