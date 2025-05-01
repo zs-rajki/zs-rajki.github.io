@@ -44,7 +44,7 @@ body {
 
 nav {
     background-color: var(--background);
-    box-shadow: 0 0 50px var(--shine);
+    box-shadow: 0 0 clamp(1.5rem, calc(2vw + 1rem), 3rem) var(--shine);
     height: 3.5rem;
     width: 100%;
     z-index: 1000;
@@ -121,7 +121,7 @@ nav a.active {
 ===================================== */
 
 main {
-    margin: min(3rem, 4%);
+    margin: min(3rem, 5%);
 }
 
 section {
@@ -220,3 +220,27 @@ section {
     100% { width: 100% }
 }
 /* END */
+
+.intro {
+    width: 60vw;
+    border-left: 0.25rem solid var(--secondary);
+    margin-top: 2rem;
+}
+.intro p {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.9rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--primary);
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 0.9rem;
+}
+@media (max-width: 768px) {
+    .intro {
+        width: 100%;
+        border-left: none
+    }
+    .intro p {
+        padding-left: 0;
+    }
+}
