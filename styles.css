@@ -121,11 +121,11 @@ nav a.active {
 ===================================== */
 
 main {
-    margin: min(3rem, 2.5%);
+    margin: 0 min(3rem, 2.5%);
 }
 
 section {
-    padding-top: 5rem;
+    padding-top: 6rem;
     min-height: 100vh;
 }
 
@@ -159,7 +159,22 @@ section {
     4. About me
 ===================================== */
 
+#about_me_section .grid {
+    display: grid;
+    grid-template-areas:
+    'title img'
+    'intro img';
+    height: calc(100vh - 6rem);
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto 1fr;
+}
+
 /* Typing title */
+.two-line-typing-title {
+    grid-area: title;
+    justify-self: left;
+    align-self: start;
+}
 .two-line-typing-title div{
     display: inline-block
 }
@@ -222,9 +237,9 @@ section {
 /* END */
 
 .intro {
-    width: 60vw;
-    border-left: 0.25rem solid var(--secondary);
-    margin-top: 2rem;
+    grid-area: intro;
+    justify-self: left;
+    align-self: center;
 }
 .intro p {
     font-family: "Geist", sans-serif;
@@ -233,14 +248,35 @@ section {
     color: var(--primary);
     text-align: justify;
     text-justify: inter-word;
-    padding-left: 0.9rem;
+    border-left: 0.25rem solid var(--secondary);
+    padding-left: 1vw;
 }
 @media (max-width: 768px) {
     .intro {
         width: 100%;
-        border-left: none
+        border-left: none;
     }
     .intro p {
         padding-left: 0;
     }
+}
+
+.image-wrapper {
+    grid-area: img;
+    height: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.placeholder {
+    width: 100%;
+    background-color: red;
+    height: 250px
 }
