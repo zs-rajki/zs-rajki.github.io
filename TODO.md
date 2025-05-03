@@ -2,8 +2,9 @@
 
 ## NavBar
 
-- Make it work even when zoomed in (it fails at least on iPhone)
 - Adjust shadow
+
+- Navbar horizontal scroll is slow on mobile when manually scrolling
 
 ## Sections
 
