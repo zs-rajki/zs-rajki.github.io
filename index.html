@@ -158,50 +158,69 @@
             </section>
         </main>
 
+        <!-- Highlight link of the currently shown section -->
         <script>
-            // 1) grab nav links + sections
             const links = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
-            const navHeight = document.querySelector('nav').offsetHeight;
+            const nav = document.querySelector('nav');
+            const navHeight = nav.offsetHeight;
 
-            // helper to clear and set .active
+            // Helper to highlight the active link
             function setActive(id) {
                 links.forEach(l => l.classList.remove('active'));
                 const link = document.querySelector(`nav a[href="#${id}"]`);
                 if (link) {
                     link.classList.add('active');
-                    // Scroll horizontally to make it visible
+                    // Scroll horizontally to center the link
                     link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
                 }
             }
 
-            // 2) smooth-scroll + immediate highlight on click
+            // Smooth scroll and immediate highlight on click
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const target = document.getElementById(this.getAttribute('href').slice(1));
+                    const targetId = this.getAttribute('href').slice(1);
+                    const target = document.getElementById(targetId);
                     if (!target) return;
                     target.scrollIntoView({ behavior: 'smooth' });
+                    setActive(targetId); // Immediately highlight
                 });
             });
 
-            // 3) IntersectionObserver: only fire when a section is >50% visible
+            // IntersectionObserver with dynamic visibility tracking
+            let visibilityMap = {};
+
             const observer = new IntersectionObserver((entries) => {
-                // find any section now covering >50% of the root area
-                const overHalf = entries.filter(e => e.intersectionRatio > 0.5);
-                if (overHalf.length === 0) return;
-                // if more than one, pick the one nearest the top of viewport
-                const topMost = overHalf.reduce((a, b) =>
-                a.boundingClientRect.top < b.boundingClientRect.top ? a : b
-                );
-                setActive(topMost.target.id);
+                entries.forEach(entry => {
+                    visibilityMap[entry.target.id] = entry.intersectionRatio;
+                });
+
+                // Find the section with the highest visibility
+                let mostVisibleSection = null;
+                let maxRatio = 0;
+
+                for (const id in visibilityMap) {
+                    if (visibilityMap[id] > maxRatio) {
+                        maxRatio = visibilityMap[id];
+                        mostVisibleSection = id;
+                    }
+                }
+
+                if (mostVisibleSection) {
+                    setActive(mostVisibleSection);
+                }
             }, {
-                root: null,                                   // viewport
-                rootMargin: `-${navHeight}px 0px 0px 0px`,    // offset by nav height
-                threshold: [0.5]                              // fire when >50% visible
+                root: null,
+                rootMargin: `-${navHeight}px 0px 0px 0px`,
+                threshold: Array.from({length: 101}, (_, i) => i / 100) // 0.00 to 1.00
             });
 
-            sections.forEach(s => observer.observe(s));
+            // Observe each section
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
         </script>
         <script>
             const projectCards = document.querySelectorAll('.project_card');
