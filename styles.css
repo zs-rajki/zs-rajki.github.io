@@ -26,6 +26,7 @@
     --secondary: #858585;
     --shine: #FFC676;
     --hover: #E4DACC;
+    --gradient: #151616;
 }
 
 * {
@@ -102,24 +103,6 @@ nav a.active {
     color: var(--shine);
 }
 
-@media (max-width: 768px) {
-    .nav-container {
-         /* Fix cropped first link */
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    nav ul {
-        justify-content: flex-start;
-    }
-    nav li {
-        flex: 0 0 auto;
-        margin: auto 0;
-    }
-    nav a {
-        padding: 1rem;
-    }
-}
-
 
 /* =====================================
     3. Main & Sections
@@ -169,10 +152,10 @@ section {
     grid-template-areas:
     'title img'
     'intro img';
-    height: calc(100vh - 6rem);
+    min-height: calc(100vh - 6rem);
     grid-template-columns: 3fr 2fr;
     grid-template-rows: auto 1fr;
-    margin: 0 min(3rem, 2.5%);
+    margin: 0 min(3rem, 3%);
 }
 
 /* Typing title */
@@ -248,15 +231,15 @@ section {
     align-self: center;
     border-left: 0.1rem solid var(--secondary);
     border-right: 0.1rem solid var(--secondary);
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 2rem 0;
 }
 .intro span {
     font-family: "Geist Mono", monospace;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: calc(0.8 * clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem));
     color: var(--secondary);
-    padding-left: 1vw;
 }
 .intro p {
     font-family: "Geist", sans-serif;
@@ -265,13 +248,13 @@ section {
     color: var(--primary);
     text-align: justify;
     text-justify: inter-word;
-    padding-top: 1vw;
+    padding-top: 1rem;
 }
 
 .image-wrapper {
     grid-area: img;
     height: 100%;
-    padding: 0 10%;
+    padding: 0 4% 0 8%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -283,7 +266,7 @@ section {
 }
 
 .skills {
-    background: linear-gradient(to bottom, #151616, #0A0A0A);
+    background: linear-gradient(to bottom, var(--gradient), var(--background));
     text-align: center;
     border-top: 0.1rem solid var(--secondary);
     border-bottom: 0.1rem solid var(--secondary);
@@ -292,21 +275,21 @@ section {
 .skills h3 {
     font-family: "Geist Mono", monospace;
     font-weight: 300;
-    font-size: 2rem;
-    margin-top: 2rem;
+    font-size: clamp(1.5rem, calc(3vw + 0.25rem), 3rem);
+    margin-top: clamp(1.5rem, calc(3vw + 0.25rem), 3rem);
     color: var(--secondary);
 }
 
 .skills-icons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* in case screen is small */
-    padding: 3rem 0 3rem;
+    flex-wrap: wrap;
+    padding: clamp(4rem, calc(6vw + 0.5rem), 5rem) 1rem;
     gap: 2rem;
 }
 
 .skills-icons i {
-    font-size: 5rem;
+    font-size: clamp(4rem, calc(6vw + 0.5rem), 5rem);
     color: var(--secondary);
     transition: transform 0.3s ease;
 }
@@ -321,12 +304,45 @@ section {
    9. Responsive Media Queries
 ===================================== */
 
-@media (max-width: 768px) {
+/* 768px was before */
+@media (max-width: 950px) {
+
+    /* Nav bar */
+    .nav-container {
+        /* Fix cropped first link */
+       overflow-x: auto;
+       white-space: nowrap;
+    }
+    nav ul {
+        justify-content: flex-start;
+    }
+    nav li {
+        flex: 0 0 auto;
+        margin: auto 0;
+    }
+    nav a {
+        padding: 1rem;
+    }
+
+    /* About me */
+    #about_me_section .grid {
+        display: grid;
+        grid-template-areas:
+        'title'
+        'intro'
+        'img';
+        height: auto;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
     .intro {
-        width: 100%;
-        border-left: none;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
     }
     .intro p {
-        padding-left: 0;
+        padding-top: 0.8rem;
+    }
+    .image-wrapper {
+        padding: 0 8%;
     }
 }
