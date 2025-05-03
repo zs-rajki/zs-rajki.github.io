@@ -7,6 +7,11 @@
    2. Navigation Bar
    3. Main & Sections
    4. About me
+   5. Projects
+   6. Vibe
+   7. Blog
+   8. Contact
+   9. Responsive Media Queries
 ===================================== */
 
 
@@ -120,9 +125,9 @@ nav a.active {
     3. Main & Sections
 ===================================== */
 
-main {
+/* main {
     margin: 0 min(3rem, 2.5%);
-}
+} */
 
 section {
     padding-top: 6rem;
@@ -167,6 +172,7 @@ section {
     height: calc(100vh - 6rem);
     grid-template-columns: 3fr 2fr;
     grid-template-rows: auto 1fr;
+    margin: 0 min(3rem, 2.5%);
 }
 
 /* Typing title */
@@ -240,6 +246,17 @@ section {
     grid-area: intro;
     justify-self: left;
     align-self: center;
+    border-left: 0.1rem solid var(--secondary);
+    border-right: 0.1rem solid var(--secondary);
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.intro span {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--secondary);
+    padding-left: 1vw;
 }
 .intro p {
     font-family: "Geist", sans-serif;
@@ -248,17 +265,7 @@ section {
     color: var(--primary);
     text-align: justify;
     text-justify: inter-word;
-    border-left: 0.25rem solid var(--secondary);
-    padding-left: 1vw;
-}
-@media (max-width: 768px) {
-    .intro {
-        width: 100%;
-        border-left: none;
-    }
-    .intro p {
-        padding-left: 0;
-    }
+    padding-top: 1vw;
 }
 
 .image-wrapper {
@@ -275,8 +282,51 @@ section {
     object-fit: contain;
 }
 
-.placeholder {
-    width: 100%;
-    background-color: red;
-    height: 250px
+.skills {
+    background: linear-gradient(to bottom, #151616, #0A0A0A);
+    text-align: center;
+    border-top: 0.1rem solid var(--secondary);
+    border-bottom: 0.1rem solid var(--secondary);
+}
+
+.skills h3 {
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: var(--secondary);
+}
+
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* in case screen is small */
+    padding: 3rem 0 3rem;
+    gap: 2rem;
+}
+
+.skills-icons i {
+    font-size: 5rem;
+    color: var(--secondary);
+    transition: transform 0.3s ease;
+}
+
+.skills-icons i:hover {
+    transform: scale(1.2);
+    color: var(--hover);
+}
+
+
+/* =====================================
+   9. Responsive Media Queries
+===================================== */
+
+@media (max-width: 768px) {
+    .intro {
+        width: 100%;
+        border-left: none;
+    }
+    .intro p {
+        padding-left: 0;
+    }
 }
