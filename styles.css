@@ -11,7 +11,8 @@
    6. Vibe
    7. Blog
    8. Contact
-   9. Responsive Media Queries
+   9. Footer
+   10. Responsive Media Queries
 ===================================== */
 
 
@@ -152,7 +153,6 @@ section {
     margin: 0 min(3rem, 3%);
     padding: 5% 10% 0;
 }
-
 .section-paragraph span {
     font-family: "Geist", sans-serif;
     font-weight: 400;
@@ -485,7 +485,24 @@ section {
 
 
 /* =====================================
-   9. Responsive Media Queries
+   9. Footer
+===================================== */
+
+footer {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--primary);
+    text-align: center;
+    background: var(--gradient);
+    width: 100vw;
+    border-top: 1px solid var(--secondary);
+    padding: 2rem 0;
+}
+
+
+/* =====================================
+   10. Responsive Media Queries
 ===================================== */
 
 /* 768px was before */
