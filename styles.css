@@ -117,29 +117,46 @@ section {
     min-height: 100vh;
 }
 
-.section_title {
+.section-title {
     display: flex;
     align-items: center;
     width: 100%;
     margin: 0 0 1.6rem;
     gap: min(1.25rem, 2%); /* space between title and line */
 }
-.section_title h1 {
+.section-title h1 {
     color: var(--primary);
     font-family: "Geist", sans-serif;
     font-weight: 600;
     font-size: clamp(2rem, calc(6vw + 0.5rem), 5rem);
     white-space: nowrap; /* Prevent title from wrapping */
 }
-.section_title #before-line {
+.section-title #before-line {
     height: min(0.3rem, 0.8vw);
     background-color: var(--secondary);
     flex: 0 0 max(5%, 3rem);
 }
-.section_title #after-line {
+.section-title #after-line {
     height: min(0.3rem, 0.8vw);
     background-color: var(--secondary);
     flex: 1;
+}
+
+.section-paragraph {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--secondary);
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 0 min(3rem, 3%);
+    padding: 5% 10% 0;
+}
+.section-paragraph span {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--primary);
 }
 
 
@@ -147,7 +164,7 @@ section {
     4. About me
 ===================================== */
 
-#about_me_section .grid {
+#about-me-section .grid {
     display: grid;
     grid-template-areas:
     'title img'
@@ -238,7 +255,7 @@ section {
 .intro span {
     font-family: "Geist Mono", monospace;
     font-weight: 400;
-    font-size: calc(0.8 * clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem));
+    font-size: clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem);
     color: var(--secondary);
 }
 .intro p {
@@ -299,80 +316,99 @@ section {
     }
 }
 
-#skill-paragraph {
-    font-family: "Geist", sans-serif;
-    font-weight: 400;
-    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
-    color: var(--secondary);
-    text-align: justify;
-    text-justify: inter-word;
-    margin: 0 min(3rem, 3%);
-    padding: 5% 10% 0;
-}
-.code {
-    font-family: "Geist", sans-serif;
-    font-weight: 400;
-    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
-    color: var(--primary);
-}
-
 
 /* =====================================
     5. Projects
 ===================================== */
-
-#card_container {
-    
-    width: 95vw;
-    margin: 2rem auto;          /* center container in page */
-    padding: 20px;
-    
-    display: flex;              /* make it a flex container */
-    flex-wrap: nowrap;          /* keep cards on one line */
-    justify-content: center;    /* center cards when they fit */
-    align-items: flex-start;    /* align top edges */
-    
-    overflow-x: auto;           /* allow horizontal scrolling */
-    gap: 20px;
+#projects-section {
+    /* Define card width */
+    --card-width: min(400px, 85vw);
+    /* END */
 }
-#card_container::-webkit-scrollbar {
-    height: 8px;
+#guide {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--secondary);
+    margin: 10% calc(0.09 * var(--card-width)) 0;
+    display: block;
 }
- #card_container::-webkit-scrollbar-thumb {
-    background-color: #858585;
-    border-radius: 4px;
+#card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+    align-items: center;
+    gap: calc(0.1 * var(--card-width));
+    padding: 2rem calc(0.1 * var(--card-width));
 }
- #card_container::-webkit-scrollbar-thumb:hover {
-    background-color: white;
+#card-container::-webkit-scrollbar {
+    height: 0.5rem;
+}
+#card-container::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+}
+#card-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary);
+}
+/* Brave */
+#card-container {
+    scrollbar-width: 0.5rem;
+    scrollbar-color: var(--secondary) transparent;
 }
   
-.project_card {
-    /* Define card width */
-    --card-width: min(800px, 85vw);
-    /* force flex‐item to respect its own width */
-    flex: 0 0 auto;
+.project-card {
+    flex: 0 0 auto; /* force flex‐item to respect its own width */
     width: var(--card-width);
     height: calc(0.5 * var(--card-width));
+    border-left: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
+    border-right: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
     position: relative;
-    overflow: hidden;
-    border-left: max(1px, calc(0.0025 * var(--card-width))) solid #858585;
-    border-right: max(1px, calc(0.0025 * var(--card-width))) solid #858585;
 }
 .selected {
-    box-shadow: 0 0 30px #FFC676;
-    background-color: #0A0A0A; /* Darken background to show selection */
-    border: 1px solid #858585;
-    background: linear-gradient(to bottom, #151616, #0A0A0A);
+    box-shadow: 0 0 calc(0.05 * var(--card-width)) var(--shine);
+    border: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
+    background: var(--gradient);
     transform: scale(1.05); /* Slightly enlarge the card */
     transition: all 0.3s ease; /* Smooth transition for all changes */
 }
+#top-left {
+    top: 0;
+    left: 0;
+}
+#top-right {
+    top: 0;
+    right: 0;
+}
+#bottom-left {
+    bottom: 0;
+    left: 0;
+}
+#bottom-right {
+    bottom: 0;
+    right: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+    .project-card:not(.selected):hover {
+        border: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
+        background: var(--gradient);
+    }
+    .project-card:not(.selected):hover .corner {
+        background-color: var(--primary);
+        width: max( 5px, calc(0.0125 * var(--card-width)));
+        height: max( 5px, calc(0.0125 * var(--card-width)));
+        position: absolute;
+    }
+}
 /* Card content styles */
-.card_content {
+.card-content {
     height: 100%;
     width: 100%;
     padding: 5%;
 }
-.card_header {
+.card-header {
     display: block;
     font-family: "Geist Mono", monospace;
     font-weight: 400;
@@ -380,14 +416,14 @@ section {
     color: var(--secondary);
     margin-bottom: 2.5%;
 }
-.card_title {
+.card-title {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: calc(0.09 * var(--card-width));
     color: var(--primary);
     margin-bottom: 3.75%;
 }
-.card_description {
+.card-description {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: calc(0.06 * var(--card-width));
@@ -399,36 +435,7 @@ section {
     overflow: hidden; /* Prevent overflow beyond the card */
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .project_card:not(.selected):hover {
-        border: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
-        background: var(--gradient);
-    }
-    .project_card:not(.selected):hover .corner {
-        background-color: var(--primary);
-        width: max( 5px, calc(0.0125 * var(--card-width)));
-        height: max( 5px, calc(0.0125 * var(--card-width)));
-        position: absolute;
-    }
-}
-#top_left {
-    top: 0;
-    left: 0;
-}
-#top_right {
-    top: 0;
-    right: 0;
-}
-#bottom_left {
-    bottom: 0;
-    left: 0;
-}
-#bottom_right {
-    bottom: 0;
-    right: 0;
-}
-
-#project_detail {
+#project-detail {
     padding: 30px;
     background: var(--background);
     border-left: 1px solid #858585;
@@ -440,14 +447,14 @@ section {
 .hidden {
     display: none;
 }
-#detail_title {
+#detail-title {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: 36px;
     color: white;
     margin-bottom: 20px;
 }
-#detail_description {
+#detail-description {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: 30px;
@@ -479,8 +486,13 @@ section {
         padding: 1rem;
     }
 
+    /* Sections */
+    .section-paragraph {
+        padding: 2rem 0 0;
+    }
+
     /* About me */
-    #about_me_section .grid {
+    #about-me-section .grid {
         display: grid;
         grid-template-areas:
         'title'
@@ -499,8 +511,5 @@ section {
     }
     .image-wrapper {
         padding: 0 8%;
-    }
-    #skill-paragraph {
-        padding: 2rem 0 0;
     }
 }
