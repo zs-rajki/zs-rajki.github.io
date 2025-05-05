@@ -1,302 +1,554 @@
+/* =====================================
+   📄 styles.css
+   My Website Stylesheet
+   -------------------------------------
+   Table of Contents:
+   1. Base
+   2. Navigation Bar
+   3. Main & Sections
+   4. About me
+   5. Projects
+   6. Vibe
+   7. Blog
+   8. Contact
+   9. Footer
+   10. Responsive Media Queries
+===================================== */
+
+
+/* =====================================
+   1. Base
+===================================== */
+
+:root {
+    /* Colors */
+    --background: #0A0A0A;
+    --primary: #FFFFFF;
+    --secondary: #858585;
+    --shine: #FFC676;
+    --hover: #E4DACC;
+    --gradient: linear-gradient(to bottom, #151616, var(--background));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
 html {
     scroll-behavior: smooth;
 }
 
 body {
     background-color: #0A0A0A;
-    margin: 0;
 }
+  
+  
+/* =====================================
+    2. Navigation Bar
+===================================== */
 
 nav {
-    background-color: #0A0A0A;
-    box-shadow: 0 0 50px #FFC676;
-    height: 50px;
+    background-color: var(--background);
+    box-shadow: 0 0 clamp(1.5rem, calc(2vw + 1rem), 3rem) var(--shine);
+    height: 3.5rem;
     width: 100%;
     z-index: 1000;
     position: fixed;
     top: 0;
 }
+
+.nav-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 100%;
+    scrollbar-width: none;  /* Firefox */
+}
+.nav-container ::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari */
+}
+
 nav ul {
+    display: flex;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    height: 100%;
 }
 nav li {
-    float: left;
+    flex: 0 0 auto;
+    margin: auto 0.5rem;
 }
+nav li:first-child {
+    padding-left: 1rem;
+}
+nav li:last-child {
+    padding-right: 1rem;
+}
+
 nav a {
-    color: #858585;
+    color: var(--secondary);
     text-decoration: none;
     font-family: "Geist Mono", monospace;
     font-weight: 300;
     font-size: 1rem;
-    padding: 15px;
+    padding: 0.5rem;
     display: block;
     text-align: center;
 }
-nav a:hover {
-    color: #e4dacc;
+@media (hover: hover) and (pointer: fine) {
+    nav a:hover {
+        color: var(--hover);  /* Desktop hover */
+    }
 }
 nav a.active {
-    color: #FFC676
+    color: var(--shine);
 }
 
-main {
-    margin: 40px;
-}
+
+/* =====================================
+    3. Main & Sections
+===================================== */
+
+/* main {
+    margin: 0 min(3rem, 2.5%);
+} */
 
 section {
-    padding-top: 80px;
+    padding-top: 6rem;
     min-height: 100vh;
 }
-.section_title {
+
+.section-title {
     display: flex;
     align-items: center;
     width: 100%;
-    margin: 0 0 25px;
-    gap: 20px; /* space between title and line */
+    margin: 0 0 1.6rem;
+    gap: min(1.25rem, 2%); /* space between title and line */
 }
-.section_title h1 {
-    color: white;
+.section-title h1 {
     font-family: "Geist", sans-serif;
     font-weight: 600;
-    font-size: 5rem;
+    font-size: clamp(2rem, calc(6vw + 0.5rem), 5rem);
+    color: var(--primary);
     white-space: nowrap; /* Prevent title from wrapping */
-    flex-shrink: 0;
-    line-height: 1;
 }
-.section_title .line1 {
-    height: 2.5px;
-    background-color: #858585;
-    flex: 0 0 5%;
+.section-title #before-line {
+    height: min(0.3rem, 0.8vw);
+    background-color: var(--secondary);
+    flex: 0 0 max(5%, 3rem);
 }
-.section_title .line2 {
-    height: 2.5px;
-    background-color: #858585;
+.section-title #after-line {
+    height: min(0.3rem, 0.8vw);
+    background-color: var(--secondary);
     flex: 1;
 }
-  
 
-.typing {
-    color: white;
+.section-paragraph {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--secondary);
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 0 min(3rem, 3%);
+    padding: 5% 10% 0;
+}
+.section-paragraph span {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--primary);
+}
+
+.under-construction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px var(--shine);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 7rem min(3rem, 3%);
+}
+.under-construction h1 {
+    font-family: "Geist", sans-serif;
+    font-weight: 600;
+    font-size: clamp(48px, calc(9vw + 16px), 120px);
+    color: var(--primary);
+}
+.under-construction img {
+    width: min(90%, 600px);
+    height: auto;
+}
+
+
+/* =====================================
+    4. About me
+===================================== */
+
+#about-me-section .grid {
+    display: grid;
+    grid-template-areas:
+    'title img'
+    'intro img';
+    min-height: calc(100vh - 6rem);
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto 1fr;
+    margin: 0 min(3rem, 3%);
+}
+
+/* Typing title */
+.two-line-typing-title {
+    grid-area: title;
+    justify-self: left;
+    align-self: start;
+}
+.two-line-typing-title div{
+    display: inline-block
+}
+.two-line-typing-title h1 {
+    color: var(--primary);
     font-family: "JetBrains Mono", monospace;
     font-weight: 400;
-    font-size: 4rem;
-    border-right: 25px solid white;
-    margin: 0;
+    font-size: clamp(3rem, calc(7.5vw + 1rem), 6rem);
+    border-right: calc(0.5 * clamp(3rem, calc(7.5vw + 1rem), 6rem)) solid var(--primary);
     overflow: hidden;
     white-space: nowrap;
 }
-
-.v1 {
-    animation: blinkingV1 1s steps(1, end) infinite, typingV1 10s steps(30, end) infinite;
+.two-line-typing-title #line-1 {
+    animation: blinkingL1 10s steps(1, end) infinite, typingL1 10s steps(24, end) infinite;
+}
+.two-line-typing-title #line-2 {
+    animation: blinkingL2 10s steps(1, end) infinite, typingL2 10s steps(24, end) infinite;
 }
 
-.v2l1 {
-    animation: blinkingV2l1 10s steps(1, end) infinite, typingV2l1 10s steps(24, end) infinite;
-}
-.v2l2 {
-    animation: blinkingV2l2 10s steps(1, end) infinite, typingV2l2 10s steps(24, end) infinite;
-}
-
-@keyframes blinkingV1 {
-    0% { border-color: transparent }
-    50% { border-color: white }
-    100% { border-color: transparent }
-}
-@keyframes blinkingV2l1 {
+@keyframes blinkingL1 {
     0% { border-color: transparent; }
-    5% { border-color: white; }
+    5% { border-color: var(--primary); }
     10% { border-color: transparent; }
-    15% { border-color: white; }
+    15% { border-color: var(--primary); }
     20% { border-color: transparent; }
-    25% { border-color: white; }
+    25% { border-color: var(--primary); }
     30% { border-color: transparent; }
-    35% { border-color: white; }
+    35% { border-color: var(--primary); }
     /* after 40%, stay hidden */
     40% { border-color: transparent; }
     100% { border-color: transparent; }
 }
-@keyframes blinkingV2l2 {
+@keyframes blinkingL2 {
     0% { border-color: transparent; }
-    40% { border-color: white; }
+    40% { border-color: var(--primary); }
     45% { border-color: transparent; }
-    50% { border-color: white; }
+    50% { border-color: var(--primary); }
     55% { border-color: transparent; }
-    60% { border-color: white; }
+    60% { border-color: var(--primary); }
     65% { border-color: transparent; }
-    70% { border-color: white; }
+    70% { border-color: var(--primary); }
     75% { border-color: transparent; }
-    80% { border-color: white; }
+    80% { border-color: var(--primary); }
     85% { border-color: transparent; }
-    90% { border-color: white; }
+    90% { border-color: var(--primary); }
     95% { border-color: transparent; }
     100% { border-color: transparent; }
 }
-@keyframes typingV1 {
-    0% { width: 0 }
-    25% { width: 50% }
-    40% { width: 50% }
-    60% { width: 100% }
-    100% { width: 100% }
-}
-
-@keyframes typingV2l1 {
+@keyframes typingL1 {
     0% { width: 0 }
     25% { width: 100% }
     100% { width: 100% }
 }
-
-@keyframes typingV2l2 {
+@keyframes typingL2 {
     0% { width: 0 }
-    40% { width: 0% }
+    40% { width: 0 }
     60% { width: 100% }
     100% { width: 100% }
 }
+/* END */
 
 .intro {
-    width: 50vw;
-    border-left: 4px solid #858585;
+    grid-area: intro;
+    justify-self: left;
+    align-self: center;
+    border-left: 0.1rem solid var(--secondary);
+    border-right: 0.1rem solid var(--secondary);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 2rem 0;
+}
+.intro span {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--secondary);
 }
 .intro p {
     font-family: "Geist", sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    color: white;
+    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--primary);
     text-align: justify;
     text-justify: inter-word;
-    padding-left: 15px;
+    padding-top: 1rem;
 }
 
-#card_container {
-    width: 95vw; /* 90% of the viewport width */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent cards from wrapping to the next line */
-    padding: 20px;
-    margin: 25px auto; /* Center the container */
-    box-sizing: border-box;
+.image-wrapper {
+    grid-area: img;
+    height: 100%;
+    padding: 0 4% 0 8%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
-#card_container::-webkit-scrollbar {
-    height: 8px;
+.image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
- #card_container::-webkit-scrollbar-thumb {
-    background-color: #858585;
-    border-radius: 4px;
+
+.skills {
+    background: var(--gradient);
+    text-align: center;
+    border-top: 0.1rem solid var(--secondary);
+    border-bottom: 0.1rem solid var(--secondary);
 }
- #card_container::-webkit-scrollbar-thumb:hover {
-    background-color: white;
+.skills h3 {
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+    font-size: clamp(1.5rem, calc(3vw + 0.25rem), 3rem);
+    margin-top: clamp(1.5rem, calc(3vw + 0.25rem), 3rem);
+    color: var(--secondary);
+}
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: clamp(4rem, calc(6vw + 0.5rem), 5rem) 1rem;
+    gap: 2rem;
+}
+.skills-icons i {
+    font-size: clamp(4rem, calc(6vw + 0.5rem), 5rem);
+    color: var(--secondary);
+}
+@media (hover: hover) and (pointer: fine) {
+    .skills-icons i {
+        transition: transform 0.3s ease;
+    }
+    .skills-icons i:hover {
+        transform: scale(1.2);
+        color: var(--hover);
+    }
+}
+
+
+/* =====================================
+    5. Projects
+===================================== */
+#projects-section {
+    /* Define card width */
+    --card-width: min(400px, 85vw);
+    /* END */
+}
+#guide {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--secondary);
+    margin: 10% calc(0.09 * var(--card-width)) 0;
+    display: block;
+}
+#card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+    align-items: center;
+    gap: calc(0.1 * var(--card-width));
+    padding: 2rem calc(0.1 * var(--card-width));
+}
+#card-container::-webkit-scrollbar {
+    height: 0.5rem;
+}
+#card-container::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+}
+#card-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary);
+}
+/* Brave */
+#card-container {
+    scrollbar-width: 0.5rem;
+    scrollbar-color: var(--secondary) transparent;
 }
   
-.project_card {
-    width: 400px;
-    height: 200px;
-    border-left: 1px solid #858585;
-    border-right: 1px solid #858585;
+.project-card {
+    flex: 0 0 auto; /* force flex‐item to respect its own width */
+    width: var(--card-width);
+    height: calc(0.5 * var(--card-width));
+    border-left: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
+    border-right: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
     position: relative;
-    padding: 20px;
-    margin: 30px;
-    overflow: hidden;
-    display: inline-block;
-    box-sizing: border-box;
 }
 .selected {
-    box-shadow: 0 0 30px #FFC676;
-    background-color: #0A0A0A; /* Darken background to show selection */
-    border: none;
+    box-shadow: 0 0 calc(0.05 * var(--card-width)) var(--shine);
+    border: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
+    background: var(--gradient);
     transform: scale(1.05); /* Slightly enlarge the card */
     transition: all 0.3s ease; /* Smooth transition for all changes */
 }
-/* Card content styles */
-.card_content {
-    position: relative;
-    height: 100%;
+#top-left {
+    top: 0;
+    left: 0;
 }
-.card_header {
+#top-right {
+    top: 0;
+    right: 0;
+}
+#bottom-left {
+    bottom: 0;
+    left: 0;
+}
+#bottom-right {
+    bottom: 0;
+    right: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+    .project-card:not(.selected):hover {
+        border: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
+        background: var(--gradient);
+    }
+    .project-card:not(.selected):hover .corner {
+        background-color: var(--primary);
+        width: max( 5px, calc(0.0125 * var(--card-width)));
+        height: max( 5px, calc(0.0125 * var(--card-width)));
+        position: absolute;
+    }
+}
+/* Card content styles */
+.card-content {
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+}
+.card-header {
+    display: block;
     font-family: "Geist Mono", monospace;
     font-weight: 400;
-    font-size: 16px;
-    color: #858585;
-    margin-bottom: 0;
+    font-size: calc(0.04 * var(--card-width));
+    color: var(--secondary);
+    margin-bottom: 2.5%;
 }
-.card_title {
+.card-title {
     font-family: "Geist", sans-serif;
     font-weight: 400;
-    font-size: 36px;
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 0;
+    font-size: calc(0.09 * var(--card-width));
+    color: var(--primary);
+    margin-bottom: 3.75%;
 }
-.card_description {
+.card-description {
     font-family: "Geist", sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    color: #858585;
-    margin-top: 15px;
+    font-size: calc(0.06 * var(--card-width));
+    color: var(--secondary);
+    max-height: 41.5%; /* Prevent the description from exceeding the assigned height */
     word-wrap: break-word; /* Break long words if they exceed width */
     overflow-wrap: break-word; /* Ensures long words break onto next line */
     white-space: normal; /* Allows the text to wrap normally */
-    max-height: calc(100% - 40px); /* Prevent the description from exceeding the card height */
     overflow: hidden; /* Prevent overflow beyond the card */
 }
 
-.project_card:hover {
-    border: 1px solid #858585;
-    background: linear-gradient(to bottom, #151616, #0A0A0A);
-}
-.project_card:hover .corner {
-    background-color: white;
-    width: 5px;
-    height: 5px;
-    position: absolute;
-}
-#top_left {
-    top: 0;
-    left: 0;
-}
-#top_right {
-    top: 0;
-    right: 0;
-}
-#bottom_left {
-    bottom: 0;
-    left: 0;
-}
-#bottom_right {
-    bottom: 0;
-    right: 0;
-}
-
-#project_detail {
+#project-detail {
     padding: 30px;
-    background: linear-gradient(to top, #151616, #0A0A0A);
-    border: 1px solid #858585;
+    background: var(--background);
+    border-left: 1px solid #858585;
+    border-right: 1px solid #858585;
     width: 95vw;
-    margin: auto;
-    box-sizing: border-box;
-    border-radius: 4px;
+    min-height: 50vh;
+    margin: 3rem auto;
 }
 .hidden {
     display: none;
 }
-#detail_title {
+#detail-title {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: 36px;
     color: white;
     margin-bottom: 20px;
 }
-#detail_description {
+#detail-description {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: 30px;
     color: white;
 }
 
-main p {
-    color: white;
-    font-size: 30px;
+
+/* =====================================
+   9. Footer
+===================================== */
+
+footer {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--primary);
+    text-align: center;
+    background: var(--gradient);
+    width: 100vw;
+    border-top: 1px solid var(--secondary);
+    padding: 2rem 0;
 }
 
-h1 {
-    color: white;
+
+/* =====================================
+   10. Responsive Media Queries
+===================================== */
+
+/* 768px was before */
+@media (max-width: 950px) {
+
+    /* Nav bar */
+    .nav-container {
+        /* Fix cropped first link */
+       overflow-x: auto;
+       white-space: nowrap;
+    }
+    nav ul {
+        justify-content: flex-start;
+    }
+    nav li {
+        flex: 0 0 auto;
+        margin: auto 0;
+    }
+    nav a {
+        padding: 1rem;
+    }
+
+    /* Sections */
+    .section-paragraph {
+        padding: 2rem 0 0;
+    }
+
+    /* About me */
+    #about-me-section .grid {
+        display: grid;
+        grid-template-areas:
+        'title'
+        'intro'
+        'img';
+        height: auto;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+    .intro {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
+    .intro p {
+        padding-top: 0.8rem;
+    }
+    .image-wrapper {
+        padding: 0 8%;
+    }
 }
