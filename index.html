@@ -38,6 +38,17 @@
         </nav>
         <main>
             <section id="about_me_section">
+                <div class="project_card" project-data="2" style="margin: 5rem auto;">
+                    <div class="corner" id="top_left"></div>
+                    <div class="corner" id="top_right"></div>
+                    <div class="corner" id="bottom_left"></div>
+                    <div class="corner" id="bottom_right"></div>
+                    <div class="card_content">
+                        <span class="card_header">[ skills, tools ]</span>
+                        <h2 class="card_title">Project Name</h2>
+                        <p class="card_description"> Short description about the project...</p>
+                    </div>
+                </div>
                 <div class="grid">
                     <div class="two-line-typing-title">
                         <div>
@@ -71,11 +82,11 @@
                         <i class="devicon-git-plain" title="Git"></i>
                         <i class="devicon-html5-plain" title="HTML5"></i>
                         <i class="devicon-css3-plain" title="CSS3"></i>
-                        <!-- <i class="devicon-github-original" title="GitHub"></i> -->
                         <i class="fa-brands fa-figma" title="Figma"></i>
                         <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
-                      </div>
-                      <!-- <div class="skills-icons">
+                    </div>
+                    <!-- <i class="devicon-github-original" title="GitHub"></i> -->
+                    <!-- <div class="skills-icons">
                         <i class="devicon-python-plain-wordmark" title="Python"></i>
                         <i class="devicon-java-plain-wordmark" title="Java"></i>
                         <i class="devicon-swift-plain-wordmark" title="Swift"></i>
@@ -85,7 +96,7 @@
                         <i class="devicon-css3-plain-wordmark" title="CSS3"></i>
                         <i class="fa-brands fa-figma" title="Figma"></i>
                         <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
-                      </div> -->
+                    </div> -->
                 </div>
                 <p id="skill-paragraph">
                     I'm proficient in
@@ -110,6 +121,10 @@
                     <h1>Projects</h1>
                     <div id="after-line"></div>
                 </div>
+                <p id="skill-paragraph">
+                    Here you can find some of the <span class="code">projects</span> I've worked on.
+                    Scroll horizontally to explore them and if you want to find out more, select one to see the details.
+                </p>
                 <div id="card_container">
                     <div class="project_card" project-data="1">
                         <div class="corner" id="top_left"></div>
@@ -119,7 +134,7 @@
                         <div class="card_content">
                             <span class="card_header">[ skills, tools ]</span>
                             <h2 class="card_title">Project Name</h2>
-                            <p class="card_description">Short description about the project...bla bla bla</p>
+                            <p class="card_description">Short description about the project...</p>
                         </div>
                     </div>
                     <div class="project_card" project-data="2">
@@ -146,8 +161,8 @@
                     </div>
                 </div>
                 <div id="project_detail" class="hidden">
-                    <h2 id="detail_title">hah</h2>
-                    <p id="detail_description">ho</p>
+                    <h2 id="detail_title"></h2>
+                    <p id="detail_description"></p>
                 </div>
             </section>
             <section id="vibe_section">
@@ -173,7 +188,7 @@
             </section>
         </main>
 
-        <!-- Highlight link of the currently shown section -->
+        <!-- Highlight the link of the currently shown section -->
         <script>
             const links = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
@@ -242,7 +257,8 @@
             });
         
             sections.forEach(section => observer.observe(section));
-        </script>     
+        </script>
+        <!-- Toggle detailed view for projects -->
         <script>
             const projectCards = document.querySelectorAll('.project_card');
             const projectDetail = document.getElementById('project_detail');

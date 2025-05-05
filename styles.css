@@ -26,7 +26,7 @@
     --secondary: #858585;
     --shine: #FFC676;
     --hover: #E4DACC;
-    --gradient: #151616;
+    --gradient: linear-gradient(to bottom, #151616, var(--background));
 }
 
 * {
@@ -266,7 +266,7 @@ section {
 }
 
 .skills {
-    background: linear-gradient(to bottom, var(--gradient), var(--background));
+    background: var(--gradient);
     text-align: center;
     border-top: 0.1rem solid var(--secondary);
     border-bottom: 0.1rem solid var(--secondary);
@@ -315,6 +315,145 @@ section {
     font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
     color: var(--primary);
 }
+
+
+/* =====================================
+    5. Projects
+===================================== */
+
+#card_container {
+    
+    width: 95vw;
+    margin: 2rem auto;          /* center container in page */
+    padding: 20px;
+    
+    display: flex;              /* make it a flex container */
+    flex-wrap: nowrap;          /* keep cards on one line */
+    justify-content: center;    /* center cards when they fit */
+    align-items: flex-start;    /* align top edges */
+    
+    overflow-x: auto;           /* allow horizontal scrolling */
+    gap: 20px;
+}
+#card_container::-webkit-scrollbar {
+    height: 8px;
+}
+ #card_container::-webkit-scrollbar-thumb {
+    background-color: #858585;
+    border-radius: 4px;
+}
+ #card_container::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+  
+.project_card {
+    /* Define card width */
+    --card-width: min(800px, 85vw);
+    /* force flex‐item to respect its own width */
+    flex: 0 0 auto;
+    width: var(--card-width);
+    height: calc(0.5 * var(--card-width));
+    position: relative;
+    overflow: hidden;
+    border-left: max(1px, calc(0.0025 * var(--card-width))) solid #858585;
+    border-right: max(1px, calc(0.0025 * var(--card-width))) solid #858585;
+}
+.selected {
+    box-shadow: 0 0 30px #FFC676;
+    background-color: #0A0A0A; /* Darken background to show selection */
+    border: 1px solid #858585;
+    background: linear-gradient(to bottom, #151616, #0A0A0A);
+    transform: scale(1.05); /* Slightly enlarge the card */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+/* Card content styles */
+.card_content {
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+}
+.card_header {
+    display: block;
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: calc(0.04 * var(--card-width));
+    color: var(--secondary);
+    margin-bottom: 2.5%;
+}
+.card_title {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: calc(0.09 * var(--card-width));
+    color: var(--primary);
+    margin-bottom: 3.75%;
+}
+.card_description {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: calc(0.06 * var(--card-width));
+    color: var(--secondary);
+    max-height: 41.5%; /* Prevent the description from exceeding the assigned height */
+    word-wrap: break-word; /* Break long words if they exceed width */
+    overflow-wrap: break-word; /* Ensures long words break onto next line */
+    white-space: normal; /* Allows the text to wrap normally */
+    overflow: hidden; /* Prevent overflow beyond the card */
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project_card:not(.selected):hover {
+        border: max(1px, calc(0.0025 * var(--card-width))) solid var(--secondary);
+        background: var(--gradient);
+    }
+    .project_card:not(.selected):hover .corner {
+        background-color: var(--primary);
+        width: max( 5px, calc(0.0125 * var(--card-width)));
+        height: max( 5px, calc(0.0125 * var(--card-width)));
+        position: absolute;
+    }
+}
+#top_left {
+    top: 0;
+    left: 0;
+}
+#top_right {
+    top: 0;
+    right: 0;
+}
+#bottom_left {
+    bottom: 0;
+    left: 0;
+}
+#bottom_right {
+    bottom: 0;
+    right: 0;
+}
+
+#project_detail {
+    padding: 30px;
+    background: var(--background);
+    border-left: 1px solid #858585;
+    border-right: 1px solid #858585;
+    width: 95vw;
+    min-height: 50vh;
+    margin: 3rem auto;
+}
+.hidden {
+    display: none;
+}
+#detail_title {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+}
+#detail_description {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
 
 /* =====================================
    9. Responsive Media Queries
