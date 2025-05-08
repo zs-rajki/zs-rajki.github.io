@@ -19,3 +19,7 @@
 - Customize card order with style="order: /order number/;"
 
 - Customize scrollbar
+
+## Contact
+
+- Make link text aligned

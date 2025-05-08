@@ -109,13 +109,9 @@ nav a.active {
     3. Main & Sections
 ===================================== */
 
-/* main {
-    margin: 0 min(3rem, 2.5%);
-} */
-
 section {
     padding-top: 6rem;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .section-title {
@@ -314,8 +310,8 @@ section {
     font-family: "Geist Mono", monospace;
     font-weight: 300;
     font-size: clamp(1.5rem, calc(3vw + 0.25rem), 3rem);
-    margin-top: clamp(1.5rem, calc(3vw + 0.25rem), 3rem);
     color: var(--secondary);
+    margin-top: clamp(1.5rem, calc(3vw + 0.25rem), 3rem);
 }
 .skills-icons {
     display: flex;
@@ -485,6 +481,95 @@ section {
 
 
 /* =====================================
+    8. Contanct
+===================================== */
+
+#contact-section .grid {
+    display: grid;
+    grid-template-areas:
+    'text links';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 5% 0 10%;
+    overflow-x: hidden;
+}
+
+.goodbye {
+    grid-area: text;
+    margin: 0 10%;
+}
+
+.goodbye h1 {
+    font-family: "Geist", sans-serif;
+    font-weight: 500;
+    font-size: calc(0.8 * clamp(3rem, calc(7.5vw + 1rem), 6rem));
+    color: var(--primary);
+    margin: 10% 0 5%;   
+}
+.goodbye p {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--secondary);
+    text-align: justify;
+    text-justify: inter-word;
+}
+.goodbye span {
+    font-family: "Geist", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--primary);
+}
+
+.links-wrapper {
+    grid-area: links;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 0;
+    gap: 1rem;
+}
+.links-wrapper > a {
+    text-decoration: none;
+    width: 100%;
+    transform: translateX(10%);
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    width: 100%;
+}
+.link i {
+    font-size: 4rem;
+    color: var(--secondary);
+}
+.link h1 {
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+    font-size: min(1.5rem, 4vw);
+    color: var(--secondary);
+    margin-left: 1rem;
+}
+@media (hover: hover) and (pointer: fine) {
+    .link:hover {
+        background: linear-gradient(to right, #bf9c6a, var(--background));
+        border: 1px solid var(--hover);
+        box-shadow: 0 0 25px var(--shine);
+    }
+    .link:hover i {
+        color: var(--background);
+    }
+    .link:hover h1 {
+        font-weight: 500;
+        color: var(--background);
+    }
+}
+
+
+/* =====================================
    9. Footer
 ===================================== */
 
@@ -550,5 +635,17 @@ footer {
     }
     .image-wrapper {
         padding: 0 8%;
+    }
+
+    /* Contact */
+    #contact-section .grid {
+        grid-template-areas:
+        'text'
+        'links';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .goodbye {
+        margin: 0 min(3rem, 3%);
     }
 }
