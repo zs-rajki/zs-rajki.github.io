@@ -1,5 +1,7 @@
 # TODO
 
+- Change favicon
+
 ## NavBar
 
 - Adjust shadow
