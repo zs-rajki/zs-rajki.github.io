@@ -146,14 +146,17 @@ section {
     color: var(--secondary);
     text-align: justify;
     text-justify: inter-word;
-    margin: 0 min(3rem, 3%);
-    padding: 5% 10% 0;
 }
 .section-paragraph span {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
     color: var(--primary);
+}
+
+.center-spacing {
+    margin: 0 min(3rem, 3%);
+    padding: 5% 10% 0;
 }
 
 .under-construction {
@@ -454,29 +457,79 @@ section {
 }
 
 #project-detail {
-    padding: 30px;
-    background: var(--background);
-    border-left: 1px solid #858585;
-    border-right: 1px solid #858585;
-    width: 95vw;
-    min-height: 50vh;
-    margin: 3rem auto;
+    display: grid;
+    grid-template-areas:
+    'text image'
+    'link image';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: min(3rem, 3%);
+    margin: 3.5vw min(3rem, 3%) 0;  
 }
-.hidden {
+#project-detail.hidden {
     display: none;
 }
-#detail-title {
-    font-family: "Geist", sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    color: white;
-    margin-bottom: 20px;
+
+.text-part {
+    grid-area: text;
 }
-#detail-description {
-    font-family: "Geist", sans-serif;
-    font-weight: 400;
-    font-size: 30px;
-    color: white;
+
+.image-part {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+#project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+#link-part {
+    grid-area: link;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#project-link {
+    /* Define link width */
+    --link-width: max(200px, 18vw);
+    /* END */
+    display: inline-block;
+    text-decoration: none;
+    width: var(--link-width);
+    margin-top: calc(0.1 * var(--link-width));
+}
+#project-link div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: calc(0.04 * var(--link-width));
+    background: var(--gradient);
+    border: calc(0.005 * var(--link-width)) solid var(--secondary);
+    border-radius: calc(0.15 * var(--link-width));
+}
+#project-link span{
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+    font-size: calc(0.075 * var(--link-width));
+    color: var(--secondary);
+}
+#project-link i{
+    font-size: calc(0.075 * var(--link-width));
+    color: var(--secondary);
+}
+@media (hover: hover) and (pointer: fine) {
+    #project-link:hover div {
+        border: calc(0.005 * var(--link-width)) solid var(--hover);
+    }
+    #project-link:hover span {
+        color: var(--hover);
+    }
+    #project-link:hover i {
+        color: var(--hover);
+    }
 }
 
 
@@ -505,14 +558,6 @@ section {
     font-size: calc(0.8 * clamp(3rem, calc(7.5vw + 1rem), 6rem));
     color: var(--primary);
     margin: 10% 0 5%;   
-}
-.goodbye p {
-    font-family: "Geist", sans-serif;
-    font-weight: 400;
-    font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
-    color: var(--secondary);
-    text-align: justify;
-    text-justify: inter-word;
 }
 .goodbye span {
     font-family: "Geist", sans-serif;
@@ -611,13 +656,12 @@ footer {
     }
 
     /* Sections */
-    .section-paragraph {
+    .center-spacing {
         padding: 2rem 0 0;
     }
 
     /* About me */
     #about-me-section .grid {
-        display: grid;
         grid-template-areas:
         'title'
         'intro'
@@ -635,6 +679,16 @@ footer {
     }
     .image-wrapper {
         padding: 0 8%;
+    }
+
+    /* Projects */
+    #project-detail {
+        grid-template-areas:
+        'text'
+        'image'
+        'link';
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
     }
 
     /* Contact */

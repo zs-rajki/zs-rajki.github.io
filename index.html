@@ -93,7 +93,7 @@
                         <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
                     </div> -->
                 </div>
-                <p class="section-paragraph">
+                <p class="section-paragraph center-spacing">
                     I'm proficient in
                     <span>Python</span>,
                     <span>Java</span>,
@@ -116,7 +116,7 @@
                     <h1>Projects</h1>
                     <div id="after-line"></div>
                 </div>
-                <p class="section-paragraph">
+                <p class="section-paragraph center-spacing">
                     Here you can find some of the <span>projects</span> I've worked on.
                     Scroll horizontally to explore them and if you want to find out more, select one to see the details.
                 </p>
@@ -128,9 +128,9 @@
                         <div class="corner" id="bottom-left"></div>
                         <div class="corner" id="bottom-right"></div>
                         <div class="card-content">
-                            <span class="card-header">[ skills, tools ]</span>
-                            <h2 class="card-title">Project Name</h2>
-                            <p class="card-description">Short description about the project...</p>
+                            <span class="card-header">[ Swift, SwiftUI ]</span>
+                            <h2 class="card-title">100 Days of SwiftUI</h2>
+                            <p class="card-description">My journey into native iOS app developement</p>
                         </div>
                     </div>
                     <div class="project-card" projectID="2">
@@ -144,43 +144,22 @@
                             <p class="card-description">Short description about the project...</p>
                         </div>
                     </div>
-                    <div class="project-card" projectID="3">
-                        <div class="corner" id="top-left"></div>
-                        <div class="corner" id="top-right"></div>
-                        <div class="corner" id="bottom-left"></div>
-                        <div class="corner" id="bottom-right"></div>
-                        <div class="card-content">
-                            <span class="card-header">[ skills, tools ]</span>
-                            <h2 class="card-title">Project Name</h2>
-                            <p class="card-description">Short description about the project...</p>
-                        </div>
-                    </div>
-                    <div class="project-card" projectID="4">
-                        <div class="corner" id="top-left"></div>
-                        <div class="corner" id="top-right"></div>
-                        <div class="corner" id="bottom-left"></div>
-                        <div class="corner" id="bottom-right"></div>
-                        <div class="card-content">
-                            <span class="card-header">[ skills, tools ]</span>
-                            <h2 class="card-title">Project Name</h2>
-                            <p class="card-description">Short description about the project...</p>
-                        </div>
-                    </div>
-                    <div class="project-card" projectID="5">
-                        <div class="corner" id="top-left"></div>
-                        <div class="corner" id="top-right"></div>
-                        <div class="corner" id="bottom-left"></div>
-                        <div class="corner" id="bottom-right"></div>
-                        <div class="card-content">
-                            <span class="card-header">[ skills, tools ]</span>
-                            <h2 class="card-title">Project Name</h2>
-                            <p class="card-description">Short description about the project...</p>
-                        </div>
-                    </div>
                 </div>
                 <div id="project-detail" class="hidden">
-                    <h2 id="detail-title"></h2>
-                    <p id="detail-description"></p>
+                    <div class="text-part">
+                        <p id="project-description" class="section-paragraph"></p>
+                    </div>
+                    <div class="image-part">
+                        <img id="project-img" src="" alt="Project Image"/>
+                    </div>
+                    <div id="link-part">
+                        <a id="project-link" href="" target="_blank">
+                            <div>
+                                <span>Check it out!</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
             <section id="vibe-section">
@@ -214,7 +193,7 @@
                 <div class="grid">
                     <div class="goodbye">
                         <h1>Thank you for your interest!</h1>
-                        <p>
+                        <p class="section-paragraph">
                             I hope you enjoyed exploring my website.
                             If <span>you</span>, <span>your company</span> or <span>your organisation</span> would like to get in touch,
                             feel free to use the provided links to connect.
@@ -338,74 +317,83 @@
         <!-- Toggle detailed view for projects -->
         <script>
             // Grab all the project cards and detail elements
-            const projectCards    = document.querySelectorAll('.project-card');
-            const projectDetail   = document.getElementById('project-detail');
-            const detailTitle     = document.getElementById('detail-title');
-            const detailDescription = document.getElementById('detail-description');
-          
+            const projectCards  = document.querySelectorAll('.project-card');
+            const projectDetail = document.getElementById('project-detail');
+            const descEl        = document.getElementById('project-description');
+            const imgEl         = document.getElementById('project-img');
+            const linkEl        = document.getElementById('project-link');
+
             // Your project data
             const projectData = {
-              1: {
-                title: "Project 1: Awesome Website",
-                description: "This project is about creating a fully responsive modern website using HTML, CSS, and JavaScript."
-              },
-              2: {
-                title: "Project 2: Mobile App",
-                description: "This project focuses on developing a cross-platform mobile application using Flutter."
-              },
-              3: {
-                title: "Project 3: Data Dashboard",
-                description: "An interactive dashboard to display real-time analytics data using React and D3.js."
-              },
-              4: {
-                title: "Project 4: Project title",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores molestias voluptatem maxime deleniti, suscipit rerum repellat! Delectus rerum, possimus libero consectetur neque amet doloremque harum exercitationem fugit ea recusandae hic."
-              },
-              5: {
-                title: "Project 5: Project title",
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores molestias voluptatem maxime deleniti, suscipit rerum repellat! Delectus rerum, possimus libero consectetur neque amet doloremque harum exercitationem fugit ea recusandae hic."
-              }
+                1: {
+                    description: `
+                        I always wanted to learn <span>app development</span>, so when I found the online course <span>100 Days of SwiftUI</span> by <span>Paul Hudson</span>, I knew this would be my next long-term project.
+                        As the name suggests, you gain the essential skills for building quality <span>iOS apps</span> using the <span>SwiftUI framework</span> over a 100-day curriculum.
+                        It begins with learning the <span>Swift programming language</span>, then the focus shifts to Apple's own framework by creating <span>25</span> mini-apps to gain hands-on experience with SwiftUI.
+                        The workload and complexity gradually increase as you progress, covering the most important topics an app developer needs, from networking to accessibility.
+                        Beyond technical skills, this course taught me the power of persistence. Committing <span>1-2 hours a day</span> to a side project for 100 days was challenging, especially in the beginning,
+                        but I learned that real progress comes from <span>small, consistent steps</span>, and it prepared me for bigger challenges.
+                    `.trim(),
+                    imgSrc: "images/project1.jpg",
+                    href:   "https://www.hackingwithswift.com/100/swiftui"
+                },
+                2: {
+                    description: `
+                        This project is about creating a fully responsive modern website using HTML, CSS, and JavaScript.
+                    `.trim(),
+                    imgSrc: "images/project1.jpg",
+                    href:   "https://example.com/project-2"
+                }
             };
-          
+
             // Track which project is currently open
             let currentProjectId = null;
-          
+
             projectCards.forEach(card => {
-              card.addEventListener('click', () => {
-                const projectId = card.getAttribute('projectID');
-          
-                // If clicking the currently selected card -> hide details & deselect
-                if (currentProjectId === projectId) {
-                  projectDetail.classList.add('hidden');
-                  card.classList.remove('selected');
-                  currentProjectId = null;
-                  return;
-                }
-          
-                // Otherwise, show the new project's details
-                const project = projectData[projectId];
-                detailTitle.textContent       = project.title;
-                detailDescription.textContent = project.description;
-                projectDetail.classList.remove('hidden');
-          
-                // Add selected style to the newly clicked card
-                card.classList.add('selected');
-          
-                // Remove selected style from the previously selected card, if any
-                if (currentProjectId !== null) {
-                  const prevCard = document.querySelector(`[projectID="${currentProjectId}"]`);
-                  prevCard.classList.remove('selected');
-                }
-                currentProjectId = projectId;
-          
-                // Scroll the selected card into view, horizontally centered
-                card.scrollIntoView({
-                  behavior: 'smooth',
-                  inline: 'center',  // center in the horizontal axis
-                  block:  'nearest'  // don't change vertical scroll
+                card.addEventListener('click', () => {
+                    const projectId = card.getAttribute('projectID');
+
+                    // If clicking the currently selected card -> hide details, clear & deselect
+                    if (currentProjectId === projectId) {
+                        projectDetail.classList.add('hidden');
+                        card.classList.remove('selected');
+                        // clear out the old content so nothing leaks through
+                        descEl.innerHTML = '';
+                        imgEl.src        = '';
+                        imgEl.alt        = '';
+                        linkEl.href      = '';
+                        currentProjectId = null;
+                        return;
+                    }
+
+                    // Otherwise, show the new project's details
+                    const data = projectData[projectId];
+                    if (!data) return;
+
+                    descEl.innerHTML = data.description;
+                    imgEl.src        = data.imgSrc;
+                    imgEl.alt        = `Project ${projectId} Image`;
+                    linkEl.href      = data.href;
+
+                    projectDetail.classList.remove('hidden');
+
+                    // Update selected styles
+                    if (currentProjectId) {
+                        document
+                            .querySelector(`.project-card[projectID="${currentProjectId}"]`)
+                            .classList.remove('selected');
+                    }
+                    card.classList.add('selected');
+                    currentProjectId = projectId;
+
+                    // Center card in view horizontally
+                    card.scrollIntoView({
+                        behavior: 'smooth',
+                        inline:   'center',
+                        block:    'nearest'
+                    });
                 });
-              });
             });
-        </script>          
+        </script>
     </body>
 </html>
