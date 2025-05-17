@@ -273,21 +273,22 @@ section {
     padding-right: 1rem;
     margin: 2rem 0;
 }
-.intro span {
+.intro > span {
+    display: inline-block;
     font-family: "Geist Mono", monospace;
     font-weight: 400;
     font-size: clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem);
     color: var(--secondary);
+    margin-bottom: 1rem;
 }
-.intro p {
+/* .intro p {
     font-family: "Geist", sans-serif;
     font-weight: 400;
     font-size: clamp(1.15rem, calc(1.5vw + 0.2rem), 1.5rem);
     color: var(--primary);
     text-align: justify;
     text-justify: inter-word;
-    padding-top: 1rem;
-}
+} */
 
 .image-wrapper {
     grid-area: img;
@@ -346,12 +347,22 @@ section {
     --card-width: min(400px, 85vw);
     /* END */
 }
-#guide {
+#guide-top {
     font-family: "Geist Mono", monospace;
     font-weight: 400;
     font-size: clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem);
     color: var(--secondary);
-    margin: 10% calc(0.09 * var(--card-width)) 0;
+    text-align: start;
+    margin: calc(0.2 * var(--card-width)) calc(0.09 * var(--card-width)) 0;
+    display: block;
+}
+#guide-bottom {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: clamp(1rem, calc(1.5vw + 0.2rem), 1.5rem);
+    color: var(--secondary);
+    text-align: end;
+    margin: calc(0.05 * var(--card-width)) calc(0.09 * var(--card-width)) calc(0.2 * var(--card-width));
     display: block;
 }
 #card-container {
@@ -360,9 +371,9 @@ section {
     overflow-x: auto;
     scroll-behavior: smooth;
     justify-content: flex-start;
-    align-items: center;
+    align-items: end;
     gap: calc(0.1 * var(--card-width));
-    padding: 2rem calc(0.1 * var(--card-width));
+    padding: calc(0.1 * var(--card-width));
 }
 #card-container::-webkit-scrollbar {
     height: 0.5rem;
