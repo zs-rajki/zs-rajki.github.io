@@ -18,8 +18,6 @@
 
 - Consider using hX header for card header instead of span, and generally use hX elements consistently
 
-- Customize card order with style="order: /order number/;"
-
 - Customize scrollbar
 
 - IMPORTANT: upload code and add link where missing
