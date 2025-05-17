@@ -139,9 +139,9 @@
                         <div class="corner" id="bottom-left"></div>
                         <div class="corner" id="bottom-right"></div>
                         <div class="card-content">
-                            <span class="card-header">[ skills, tools ]</span>
-                            <h2 class="card-title">Project Name</h2>
-                            <p class="card-description">Short description about the project...</p>
+                            <span class="card-header">[ Java, Swing, Git ]</span>
+                            <h2 class="card-title">GameOfCatch</h2>
+                            <p class="card-description">One of my first porojects, a simple 2-player game</p>
                         </div>
                     </div>
                     <div class="project-card" projectID="3">
@@ -150,9 +150,9 @@
                         <div class="corner" id="bottom-left"></div>
                         <div class="corner" id="bottom-right"></div>
                         <div class="card-content">
-                            <span class="card-header">[ skills, tools ]</span>
-                            <h2 class="card-title">Project Name</h2>
-                            <p class="card-description">Short description about the project...</p>
+                            <span class="card-header">[ Python, Computer Vision ]</span>
+                            <h2 class="card-title">GAIA Robotics</h2>
+                            <p class="card-description">Cleaning up beaches through technology</p>
                         </div>
                     </div>
                     <div class="project-card" projectID="4">
@@ -161,12 +161,24 @@
                         <div class="corner" id="bottom-left"></div>
                         <div class="corner" id="bottom-right"></div>
                         <div class="card-content">
-                            <span class="card-header">[ skills, tools ]</span>
-                            <h2 class="card-title">Project Name</h2>
-                            <p class="card-description">Short description about the project...</p>
+                            <span class="card-header">[ Java, Swing, Git ]</span>
+                            <h2 class="card-title">Sujiko solver</h2>
+                            <p class="card-description">A puzzle editor and solver application</p>
                         </div>
                     </div>
                     <div class="project-card" projectID="5">
+                        <div class="corner" id="top-left"></div>
+                        <div class="corner" id="top-right"></div>
+                        <div class="corner" id="bottom-left"></div>
+                        <div class="corner" id="bottom-right"></div>
+                        <div class="card-content">
+                            <span class="card-header">[ HTML, CSS, Figma ]</span>
+                            <h2 class="card-title">My website</h2>
+                            <p class="card-description">Creating my own portfolio website from scratch</p>
+                        </div>
+                    </div>
+                    <!-- Card template -->
+                    <!-- <div class="project-card" projectID="5">
                         <div class="corner" id="top-left"></div>
                         <div class="corner" id="top-right"></div>
                         <div class="corner" id="bottom-left"></div>
@@ -176,7 +188,7 @@
                             <h2 class="card-title">Project Name</h2>
                             <p class="card-description">Short description about the project...</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <span id="guide-bottom">[ SELECT ONE TO LEARN MORE ]</span>
                 <div id="project-detail" class="hidden">
@@ -373,31 +385,56 @@
                 },
                 2: {
                     description: `
-                        This project is about creating a fully responsive modern website using HTML, CSS, and JavaScript.
+                        When I started university, one of my first courses was 2IP90 - Programming, where I learned about <span>Java</span> and <span>object-oriented programming</span>.
+                        One of our major assignments was a <span>challenge-based learning project</span>, where we had to create a game in pairs using the tools and techniques we had learned during the course.
+                        Since neither my partner nor I had significant prior programming experience, we chose a simple idea and focused on making the most of it.
+                        The game is a two-player, 2D, retro-styled <span>catching game</span>, where the blue character (controlled with WASD) tries to catch the red one (controlled with the arrow keys) as quickly as possible.
+                        You can choose to play on a <span>pre-defined map</span> or a <span>randomly generated one</span>.
+                        Throughout the project, we gained valuable experience with <span>version control</span>, <span>collaboration</span>, <span>object-oriented design</span>, the <span>Swing library</span>,
+                        and <span>Java</span> itself. Despite its simplicity, we built a robust game and received nearly full marks for the assignment.
                     `.trim(),
-                    imgSrc: "images/project1.jpg",
-                    href:   "https://example.com/project-2"
+                    imgSrc: "images/project2.png",
+                    href:   "-"
                 },
                 3: {
                     description: `
-                        This project is about creating a fully responsive modern website using HTML, CSS, and JavaScript.
+                        In <span>September 2024</span>, I joined a student team at my university called <span>GAIA Robotics</span>.
+                        The team's mission is to develop autonomous robots that address environmental challenges such as coastal and urban cleaning, emergency response, demining post-war areas, reforestation, and more.
+                        I was drawn to the idea of using my <span>technical skills</span> to help <span>protect and restore our environment</span>.
+                        I am part of the <span>AI&ML department</span> (Artificial Intelligence & Machine Learning), where I work on <span>computer vision</span> and <span>image detection</span> for our prototype.
+                        Right now, we are focusing on <span>fine-tuning</span> a <span>YOLO</span> model and optimizing its performance on relatively simple hardware.
+                        This is a large-scale project that involves <span>extensive research</span>, <span>careful planning and coordination</span>, and <span>collaboration across multiple disciplines</span>.
+                        It's a great opportunity to learn <span>new skills</span>, tackle <span>real-life challenges</span> beyond the classroom, and collaborate with like-minded peers.
                     `.trim(),
-                    imgSrc: "images/project1.jpg",
-                    href:   "https://example.com/project-2"
+                    imgSrc: "images/project3.png",
+                    href:   "https://www.teamgaia.nl"
                 },
                 4: {
                     description: `
-                        This project is about creating a fully responsive modern website using HTML, CSS, and JavaScript.
+                        This is another university project, this time for the course <span>2IRR00 - Software Design</span>.
+                        In a small team, we built a <span>Java Maven application</span> that can be used to edit and solve a logic puzzle.
+                        We chose <span>Sujiko</span>, a <span>Japanese logic puzzle</span> played on a 3x3 grid, where four circled number clues at the center of each quadrant indicate the sum of the four numbers in that quadrant.
+                        The numbers 1-9 must be placed in the grid according to these clues to complete the puzzle.
+                        Our application can <span>solve the puzzle</span>, provide <span>basic hints</span>, check your solution, and <span>highlight cells</span> based on your progress.
+                        It also allows you to <span>edit or create puzzles</span>, use <span>undo/redo</span> while solving, and <span>save or load puzzle files</span> with your current state.
+                        In the end, it became a fairly complex application, so we made sure to apply various <span>software design patterns</span> and <span>principles</span>, which was also one of the main goals of the assignment.
                     `.trim(),
-                    imgSrc: "images/project1.jpg",
-                    href:   "https://example.com/project-2"
+                    imgSrc: "images/project4.png",
+                    href:   "-"
                 },
                 5: {
                     description: `
-                        This project is about creating a fully responsive modern website using HTML, CSS, and JavaScript.
+                        I always wanted to create a website for myself, but when I decided to work on more and bigger personal projects, I knew I should start with a <span>portfolio website</span> where I can showcase my work.
+                        To my surprise, we don't really learn how to build websites at the university, so this was a skill I had to pick up entirely on my own.
+                        And oh boy, had I known what I was in for! When you start looking into <span>web development</span>, even for a simple static website, it's easy to get overwhelmed by the countless frameworks, tools, and best practices out there.
+                        But it didn't take long for me to realize that for a portfolio website, I could keep the <span>tech stack</span> simple. Instead of spending days watching tutorials on the latest libraries, I chose to dive in and learn by <span>building</span>.
+                        I decided to create a fully <span>responsive</span>, <span>modern website</span> using plain <span>HTML</span>, <span>vanilla CSS</span>, and a little <span>JavaScript</span>.
+                        I designed the entire layout in <span>Figma</span>, which made the coding process smoother since I already had a structured prototype to follow.
+                        What amazed me most was how limitless creating it felt as I didn't really have to compromise on the design, even though it was my first time building a website from scratch.
+                        That said, this is definitely one of those projects that will never truly be finished. I'm always finding small improvements and making changes here and there.
                     `.trim(),
-                    imgSrc: "images/project1.jpg",
-                    href:   "https://example.com/project-2"
+                    imgSrc: "images/project5.png",
+                    href:   "https://github.com/zs-rajki/zs-rajki.github.io"
                 }
             };
 
@@ -417,6 +454,7 @@
                         imgEl.src        = '';
                         imgEl.alt        = '';
                         linkEl.href      = '';
+                        linkEl.style.display = 'none';
                         currentProjectId = null;
                         return;
                     }
@@ -426,9 +464,15 @@
                     if (!data) return;
 
                     descEl.innerHTML = data.description;
-                    imgEl.src        = data.imgSrc;
-                    imgEl.alt        = `Project ${projectId} Image`;
-                    linkEl.href      = data.href;
+                    imgEl.src = data.imgSrc;
+                    imgEl.alt = `Project ${projectId} Image`;
+                    // Show or hide link depending on value
+                    if (data.href === '-') {
+                        linkEl.style.display = 'none';
+                    } else {
+                        linkEl.href = data.href;
+                        linkEl.style.display = 'inline-block';
+                    }
 
                     projectDetail.classList.remove('hidden');
 

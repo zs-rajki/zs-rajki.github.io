@@ -22,6 +22,8 @@
 
 - Customize scrollbar
 
+- IMPORTANT: upload code and add link where missing
+
 ## Contact
 
 - Make link text aligned
