@@ -22,6 +22,8 @@
 
 - IMPORTANT: upload code and add link where missing
 
+- Add space under detailed view (on mobile next section is too close)
+
 ## Contact
 
 - Make link text aligned

@@ -342,6 +342,7 @@ section {
 /* =====================================
     5. Projects
 ===================================== */
+
 #projects-section {
     /* Define card width */
     --card-width: min(400px, 85vw);
@@ -543,6 +544,174 @@ section {
     }
 }
 
+/* =====================================
+    6. Vibe
+===================================== */
+
+#vibe-section .grid {
+    display: grid;
+    grid-template-areas:
+    'art song song setup setup setup'
+    'quote quote quote setup setup setup'
+    'wall wall movie wallpaper wallpaper book'
+    'tree tree movie wallpaper wallpaper book'
+    'tree tree movie create create book'
+    'tree tree meme meme me me';
+    grid-template-columns: 1fr 2fr 1.9915fr 2fr 1fr 1.75fr;
+    grid-template-rows: 152px auto auto 1fr auto auto;
+    background-color: var(--secondary);
+    gap: 2.5px;
+    border-top: 2.5px solid var(--secondary);
+    border-bottom : 2.5px solid var(--secondary);
+    width: 100%;
+    /* height: 140vh; */
+}
+
+.vibe-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    overflow: hidden;
+}
+.vibe-cell img {
+    width: 100%;
+    height: auto;
+}
+.vibe-cell-captioned {
+    background-color: var(--background);
+    position: relative;
+}
+.vibe-cell-captioned .caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: min(35px, 15%); */
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    color: var(--secondary);
+    padding: 1rem;
+}
+.vibe-cell-captioned .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    /* height: calc(100% - min(35px, 15%)); */
+    overflow: hidden;
+}
+.vibe-cell-captioned .content img {
+    width: 100%;
+    height: auto;
+}
+
+
+#art {
+    grid-area: art;
+}
+
+#song {
+    grid-area: song;
+}
+
+#setup {
+    grid-area: setup;
+}
+#setup .image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+}
+#setup .image-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    /* transition: opacity 0.1s ease-in-out; */
+    display: block;
+}
+#setup #main-image {
+    z-index: 1;
+    opacity: 1;
+}
+#setup #hover-image {
+    z-index: 2;
+    opacity: 0;
+}
+#setup:hover #hover-image {
+    opacity: 1;
+}
+#setup:hover #main-image {
+    opacity: 0;
+}
+
+#quote {
+    grid-area: quote;
+    padding: 3rem;
+}
+#quote p {
+    font-family: "Geist", sans-serif;
+    font-weight: 500;
+    font-size: 2.3rem;
+    color: var(--primary);
+}
+#quote span {
+    display: inline-block;
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    text-align: right;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#wall {
+    grid-area: wall;
+}
+
+#tree {
+    grid-area: tree;
+}
+
+#movie {
+    grid-area: movie;
+}
+
+#wallpaper {
+    grid-area: wallpaper;
+}
+
+#create {
+    grid-area: create;
+}
+
+#book {
+    grid-area: book;
+}
+
+#meme {
+    grid-area: meme;
+}
+
+#me {
+    grid-area: me;
+}
+
+
+/* =====================================
+    7. Blog
+===================================== */
+
+
 
 /* =====================================
     8. Contanct
@@ -611,16 +780,17 @@ section {
 }
 @media (hover: hover) and (pointer: fine) {
     .link:hover {
-        background: linear-gradient(to right, #bf9c6a, var(--background));
+        background: var(--gradient);
         border: 1px solid var(--hover);
         box-shadow: 0 0 25px var(--shine);
+        transform: scale(1.05);
+        transition: all 0.1s ease;
     }
     .link:hover i {
-        color: var(--background);
+        color: var(--hover);
     }
     .link:hover h1 {
-        font-weight: 500;
-        color: var(--background);
+        color: var(--hover);
     }
 }
 
