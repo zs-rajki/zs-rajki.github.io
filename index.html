@@ -221,11 +221,11 @@
                     <div class="vibe-cell" id="song">
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/70LcF31zb1H0PyJoS1Sx1r?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
-                    <div class="vibe-cell-captioned" id="setup">
+                    <div class="vibe-cell-captioned" id="desk">
                         <div class="content">
                             <div class="image-wrapper">
-                                <img src="images/vibe/setup.jpeg" alt="Workspace image" id="main-image"/>
-                                <img src="images/vibe/setup-hover.jpeg" alt="Workspace hover image" id="hover-image"/>
+                                <img src="images/vibe/desk-light.jpeg" alt="Workspace light image" id="desk-light"/>
+                                <img src="images/vibe/desk-dark.jpeg" alt="Workspace dark image" id="desk-dark"/>
                             </div>
                         </div>
                         <div class="caption">[ This is my workspace ]</div>
@@ -541,6 +541,54 @@
                         inline:   'center',
                         block:    'nearest'
                     });
+                });
+            });
+        </script>
+        <!-- Change setup image in Vibe as you scroll -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const setup    = document.getElementById('desk');
+                const mainImg  = document.getElementById('desk-light');
+                const hoverImg = document.getElementById('desk-dark');
+
+                let start = 0, end = 0;
+
+                function clamp(v, min, max) {
+                    return v < min ? min : v > max ? max : v;
+                }
+
+                function recalcRanges() {
+                    const rect      = setup.getBoundingClientRect();
+                    const scrollY   = window.pageYOffset;
+                    const vh        = window.innerHeight;
+                    const elemTop   = scrollY + rect.top;
+                    const elemH     = rect.height;
+                    const offset    = elemH * 0.25;   // << 1/4 of the element’s height
+
+                    // original start: elemTop + elemH - vh
+                    // move it "sooner" by offset:
+                    start = elemTop + elemH - vh - offset;
+
+                    // original end: elemTop
+                    // move that up by same offset:
+                    end = elemTop - offset;
+                }
+
+                function onScroll() {
+                    const scrollY   = window.pageYOffset;
+                    const progress  = clamp((scrollY - start) / (end - start), 0, 1);
+
+                    mainImg.style.opacity  = String(1 - progress);
+                    hoverImg.style.opacity = String(progress);
+                }
+
+                // wire up
+                recalcRanges();
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', () => {
+                    recalcRanges();
+                    onScroll();
                 });
             });
         </script>

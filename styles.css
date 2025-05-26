@@ -551,8 +551,8 @@ section {
 #vibe-section .grid {
     display: grid;
     grid-template-areas:
-    'art song song setup setup setup'
-    'quote quote quote setup setup setup'
+    'art song song desk desk desk'
+    'quote quote quote desk desk desk'
     'wall wall movie wallpaper wallpaper book'
     'tree tree movie wallpaper wallpaper book'
     'tree tree movie create create book'
@@ -618,16 +618,16 @@ section {
     grid-area: song;
 }
 
-#setup {
-    grid-area: setup;
+#desk {
+    grid-area: desk;
 }
-#setup .image-wrapper {
+#desk .image-wrapper {
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     position: relative;
 }
-#setup .image-wrapper img {
+#desk .image-wrapper img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -635,21 +635,14 @@ section {
     height: 100%;
     object-fit: cover;
     transform: translate(-50%, -50%);
-    /* transition: opacity 0.1s ease-in-out; */
     display: block;
 }
-#setup #main-image {
+#desk #desk-light {
     z-index: 1;
     opacity: 1;
 }
-#setup #hover-image {
+#desk #desk-dark {
     z-index: 2;
-    opacity: 0;
-}
-#setup:hover #hover-image {
-    opacity: 1;
-}
-#setup:hover #main-image {
     opacity: 0;
 }
 
