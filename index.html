@@ -221,13 +221,12 @@
                     </div>
                     <div class="vibe-cell" id="song">
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/70LcF31zb1H0PyJoS1Sx1r?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/30Uu3CWjWfudnTGTIrw93V?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
                     </div>
-                    <div class="vibe-cell-captioned" id="desk">
-                        <div class="content">
-                            <div class="image-wrapper">
-                                <img src="images/vibe/desk-light.jpeg" alt="Workspace light image" id="desk-light"/>
-                                <img src="images/vibe/desk-dark.jpeg" alt="Workspace dark image" id="desk-dark"/>
-                            </div>
+                    <div class="vibe-cell" id="desk">
+                        <div class="image-wrapper">
+                            <img src="images/vibe/desk-light.jpeg" alt="Workspace light image" id="desk-light"/>
+                            <img src="images/vibe/desk-dark.jpeg" alt="Workspace dark image" id="desk-dark"/>
                         </div>
                         <div class="caption">[ This is my workspace ]</div>
                     </div>
@@ -236,36 +235,30 @@
                         <span>- probably an engineer</span>
                     </div>
                     <div class="vibe-cell" id="wall">
-                        <img  src="images/vibe/granda.jpeg" alt="Granada image"/>
+                        <img  src="images/vibe/wall.jpeg" alt="Wall image"/>
                     </div>
-                    <div class="vibe-cell" id="tree">
+                    <div class="vibe-cell filled" id="tree">
                         <img  src="images/vibe/tree.jpeg" alt="Tree image"/>
                     </div>
-                    <div class="vibe-cell-captioned" id="movie">
-                        <div class="content">
-                            <img  src="images/vibe/movie.jpg" alt="Movie image"/>
-                        </div>
+                    <div class="vibe-cell" id="movie">
+                        <img  src="images/vibe/movie.jpg" alt="Movie image"/>
                         <div class="caption">[ The last movie I watched ]</div>
                     </div>
-                    <div class="vibe-cell-captioned" id="wallpaper">
+                    <div class="vibe-cell" id="wallpaper">
                         <div class="caption">[ My wallpaper currently ]</div>
-                        <div class="content">
-                            <img  src="images/vibe/wallpaper.png" alt="Wallpaper"/>
-                        </div>
+                        <img  src="images/vibe/wallpaper.png" alt="Wallpaper"/>
                     </div>
                     <div class="vibe-cell" id="create">
                         <img  src="images/vibe/create.jpeg" alt="Create image"/>
                     </div>
-                    <div class="vibe-cell-captioned" id="book">
-                        <div class="content">
-                            <img  src="images/vibe/book.jpg" alt="Book image"/>
-                        </div>
+                    <div class="vibe-cell" id="book">
+                        <img  src="images/vibe/book.jpg" alt="Book image"/>
                         <div class="caption">[ The last book I read ]</div>
                     </div>
                     <div class="vibe-cell" id="meme">
                         <img  src="images/vibe/meme.jpg" alt="Meme image"/>
                     </div>
-                    <div class="vibe-cell" id="me">
+                    <div class="vibe-cell filled" id="me">
                         <img  src="images/vibe/dolomites.jpg" alt="Me image"/>
                     </div>
                 </div>
@@ -559,23 +552,18 @@
                 }
 
                 function recalcRanges() {
-                    const rect      = setup.getBoundingClientRect();
-                    const scrollY   = window.pageYOffset;
-                    const vh        = window.innerHeight;
-                    const elemTop   = scrollY + rect.top;
-                    const elemH     = rect.height;
-                    const offset    = elemH * 0.25;   // << 1/4 of the element’s height
-
-                    // original start: elemTop + elemH - vh
-                    // move it "sooner" by offset:
-                    start = elemTop + elemH - vh - offset;
-
-                    // original end: elemTop
-                    // move that up by same offset:
-                    end = elemTop - offset;
+                    const rect    = setup.getBoundingClientRect();
+                    const scrollY = window.pageYOffset;
+                    const vh      = window.innerHeight;
+                    const elemTop = scrollY + rect.top;
+                    const elemH   = rect.height;
+                    // Original formulas
+                    start = elemTop + elemH - vh;
+                    end   = elemTop - elemH * 0.25;
                 }
 
                 function onScroll() {
+                    recalcRanges();  // always fresh
                     const scrollY   = window.pageYOffset;
                     const progress  = clamp((scrollY - start) / (end - start), 0, 1);
 
@@ -583,14 +571,10 @@
                     hoverImg.style.opacity = String(progress);
                 }
 
-                // wire up
-                recalcRanges();
+                // Initial setup + listeners
                 onScroll();
                 window.addEventListener('scroll', onScroll, { passive: true });
-                window.addEventListener('resize', () => {
-                    recalcRanges();
-                    onScroll();
-                });
+                window.addEventListener('resize', onScroll, { passive: true });
             });
         </script>
     </body>
