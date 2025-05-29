@@ -645,12 +645,12 @@ section {
 
 #quote {
     grid-area: quote;
-    padding: clamp(1.5rem, 4vw, 3rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 #quote p {
-    font-family: "Geist", sans-serif;
-    font-weight: 500;
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 5vw, 4rem);
     color: var(--primary);
 }
 #quote span {
