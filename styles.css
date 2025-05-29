@@ -602,6 +602,8 @@ section {
     font-weight: 400;
     font-size: clamp(0.75rem, 1.2vw, 1rem);
     color: var(--secondary);
+    background: var(--gradient);
+    width: 100%;
     padding: clamp(0.5rem, 1.5vw, 1rem);
 }
 
@@ -645,6 +647,7 @@ section {
 
 #quote {
     grid-area: quote;
+    background: linear-gradient(to top, #151616, var(--background));
     padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 #quote p {
