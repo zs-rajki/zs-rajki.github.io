@@ -75,12 +75,15 @@
                         <i class="devicon-python-plain" title="Python"></i>
                         <i class="devicon-java-plain" title="Java"></i>
                         <i class="devicon-swift-plain" title="Swift"></i>
+                        <i class="devicon-react-original" title="React"></i>
                         <i class="devicon-c-plain" title="C"></i>
                         <i class="devicon-git-plain" title="Git"></i>
                         <i class="devicon-html5-plain" title="HTML5"></i>
                         <i class="devicon-css3-plain" title="CSS3"></i>
+                        <i class="devicon-javascript-plain" title="JavaScript"></i>
                         <i class="fa-brands fa-figma" title="Figma"></i>
                         <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
+                        <i class="devicon-r-plain" title="R"></i>
                     </div>
                     <!-- <div class="skills-icons">
                         <i class="devicon-python-plain-wordmark" title="Python"></i>
@@ -99,12 +102,15 @@
                     <span>Python</span>,
                     <span>Java</span>,
                     <span>Swift</span>,
+                    <span>React</span>,
                     <span>C</span>,
                     <span>Git</span>,
                     <span>HTML</span>,
                     <span>CSS</span>,
-                    <span>Figma</span>, and
-                    <span>SQL</span>, with experience spanning both software development and user interface design.
+                    <span>JavaScript</span>,
+                    <span>Figma</span>, 
+                    <span>SQL</span>, and
+                    <span>R</span>, with experience spanning both software development and user interface design.
                     I've learned some of these tools through my studies at university, while others I've picked up on my own.
                     I prefer project-based learning, so I focus on deepening my knowledge by creating more complex programs using these tools.
                     However, I don't want to get comfortable and let familiarity hold me back from learning new things, so
@@ -123,7 +129,7 @@
                 </p>
                 <span id="guide-top">[ SCROLL - - - - > ]</span>
                 <div id="card-container">
-                    <div class="project-card" projectID="1" style="order: 4;">
+                    <div class="project-card" projectID="1" style="order: 5;">
                         <div class="corner" id="top-left"></div>
                         <div class="corner" id="top-right"></div>
                         <div class="corner" id="bottom-left"></div>
@@ -134,7 +140,7 @@
                             <p class="card-description">My journey into native iOS app developement</p>
                         </div>
                     </div>
-                    <div class="project-card" projectID="2" style="order: 5;">
+                    <div class="project-card" projectID="2" style="order: 6;">
                         <div class="corner" id="top-left"></div>
                         <div class="corner" id="top-right"></div>
                         <div class="corner" id="bottom-left"></div>
@@ -145,7 +151,7 @@
                             <p class="card-description">One of my first porojects, a simple 2-player game</p>
                         </div>
                     </div>
-                    <div class="project-card" projectID="3" style="order: 1;">
+                    <div class="project-card" projectID="3" style="order: 2;">
                         <div class="corner" id="top-left"></div>
                         <div class="corner" id="top-right"></div>
                         <div class="corner" id="bottom-left"></div>
@@ -156,7 +162,7 @@
                             <p class="card-description">Cleaning up beaches through technology</p>
                         </div>
                     </div>
-                    <div class="project-card" projectID="4" style="order: 2;">
+                    <div class="project-card" projectID="4" style="order: 3;">
                         <div class="corner" id="top-left"></div>
                         <div class="corner" id="top-right"></div>
                         <div class="corner" id="bottom-left"></div>
@@ -167,7 +173,7 @@
                             <p class="card-description">A puzzle editor and solver application</p>
                         </div>
                     </div>
-                    <div class="project-card" projectID="5" style="order: 3;">
+                    <div class="project-card" projectID="5" style="order: 4;">
                         <div class="corner" id="top-left"></div>
                         <div class="corner" id="top-right"></div>
                         <div class="corner" id="bottom-left"></div>
@@ -176,6 +182,17 @@
                             <span class="card-header">[ HTML, CSS, Figma ]</span>
                             <h2 class="card-title">My website</h2>
                             <p class="card-description">Creating my own portfolio website from scratch</p>
+                        </div>
+                    </div>
+                    <div class="project-card" projectID="6" style="order: 1;">
+                        <div class="corner" id="top-left"></div>
+                        <div class="corner" id="top-right"></div>
+                        <div class="corner" id="bottom-left"></div>
+                        <div class="corner" id="bottom-right"></div>
+                        <div class="card-content">
+                            <span class="card-header">[ R, HTML/CSS/JavaScript, Figma ]</span>
+                            <h2 class="card-title">Predictive Dashboard</h2>
+                            <p class="card-description">Student facing dashboard about academic resilience</p>
                         </div>
                     </div>
                     <!-- Card template -->
@@ -196,9 +213,7 @@
                     <div class="text-part">
                         <p id="project-description" class="section-paragraph"></p>
                     </div>
-                    <div class="image-part">
-                        <img id="project-img" src="" alt="Project Image"/>
-                    </div>
+                    <div id="image-wrapper" class="image-part"></div>
                     <div id="link-part">
                         <a id="project-link" href="" target="_blank">
                             <div>
@@ -240,7 +255,7 @@
                         <p>"I do this not because it is easy, but because I thought it would be easy..."</p>
                         <!-- <span>- probably an engineer</span> -->
                     </div>
-                    <div class="vibe-cell" id="wide">
+                    <div class="vibe-cell" id="wide">q
                         <img  src="images/vibe/hill.jpeg" alt="Hill image"/>
                     </div>
                     <div class="vibe-cell filled" id="tree">
@@ -415,9 +430,9 @@
             // Grab all the project cards and detail elements
             const projectCards  = document.querySelectorAll('.project-card');
             const projectDetail = document.getElementById('project-detail');
-            const descEl        = document.getElementById('project-description');
-            const imgEl         = document.getElementById('project-img');
-            const linkEl        = document.getElementById('project-link');
+            const descEl = document.getElementById('project-description');
+            const imgWrapper = document.getElementById('image-wrapper');
+            const linkEl = document.getElementById('project-link');
 
             // Your project data
             const projectData = {
@@ -485,6 +500,20 @@
                     `.trim(),
                     imgSrc: "images/project5.png",
                     href:   "https://github.com/zs-rajki/zs-rajki.github.io"
+                },
+                6: {
+                    description: `
+                        As part of the <span>Artificial Tutors</span> course, our team developed a <span>predictive academic dashboard</span> to help students monitor and improve their <span>academic resilience</span>.
+                        My main responsibility was leading the <span>frontend development</span> from <span>initial design</span> to <span>full integration</span>.
+                        I used my prior experience with <span>Figma</span> to design a clear, user-friendly layout, grounded in <span>academic research</span> on dashboard usability and cognitive load.
+                        I also helped <span>teach teammates</span> the basics of <span>UI design</span>, <span>Git</span>, and <span>collaborative development</span>, which strengthened our workflow and team alignment.
+                        We implemented the dashboard using <span>R Shiny</span> with custom <span>HTML</span> and <span>CSS</span>, adding dynamic elements like theme switching, personalized feedback, and visualizations that reflect <span>student engagement and recovery patterns</span>.
+                        I coordinated closely with the backend team to ensure smooth <span>data integration</span> and kept our modules <span>decoupled</span> and <span>well-abstracted</span> for maintainability.
+                        To ensure long-term sustainability, I also wrote clear <span>documentation</span> and helped optimize the code to minimize unnecessary server calls.
+                        The dashboard was positively received during <span>usability testing</span>, and I'm proud that my contribution helped make the tool both <span>insightful</span> and <span>intuitive</span> for students seeking to improve their learning strategies.
+                    `.trim(),
+                    imgSrc: ["images/project6.1.png", "images/project6.2.png"],
+                    href:   "-"
                 }
             };
 
@@ -501,8 +530,6 @@
                         card.classList.remove('selected');
                         // clear out the old content so nothing leaks through
                         descEl.innerHTML = '';
-                        imgEl.src        = '';
-                        imgEl.alt        = '';
                         linkEl.href      = '';
                         linkEl.style.display = 'none';
                         currentProjectId = null;
@@ -514,8 +541,23 @@
                     if (!data) return;
 
                     descEl.innerHTML = data.description;
-                    imgEl.src = data.imgSrc;
-                    imgEl.alt = `Project ${projectId} Image`;
+
+                    imgWrapper.innerHTML = ""; // Clear previous content if any
+                    if (Array.isArray(data.imgSrc)) {
+                        data.imgSrc.forEach((src, idx) => {
+                            const img = document.createElement('img');
+                            img.src = src;
+                            img.alt = `Project ${projectId} Image ${idx + 1}`;
+                            img.classList.add("project-img");
+                            imgWrapper.appendChild(img);
+                        });
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = data.imgSrc;
+                        img.alt = `Project ${projectId} Image`;
+                        img.classList.add("project-img");
+                        imgWrapper.appendChild(img);
+                    }
                     // Show or hide link depending on value
                     if (data.href === '-') {
                         linkEl.style.display = 'none';
