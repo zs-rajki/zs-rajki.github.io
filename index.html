@@ -67,7 +67,12 @@
                             In my free time, I find inspiration in movies, hiking and nature. I'm always aiming to stay curious and keep growing.
                         </p>
                     </div>
-                    <div class="image-wrapper"><img src="images/new_me.png" alt="Picture of me" /></div>
+                    <div class="image-wrapper">
+                        <picture>
+                            <source srcset="webp/new_me.webp" type="image/webp">
+                            <img src="images/new_me.png" alt="Picture of me" />
+                        </picture>
+                    </div>
                 </div>
                 <div class="skills">
                     <h3>[ SKILLS ]</h3>
@@ -85,17 +90,6 @@
                         <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
                         <i class="devicon-r-plain" title="R"></i>
                     </div>
-                    <!-- <div class="skills-icons">
-                        <i class="devicon-python-plain-wordmark" title="Python"></i>
-                        <i class="devicon-java-plain-wordmark" title="Java"></i>
-                        <i class="devicon-swift-plain-wordmark" title="Swift"></i>
-                        <i class="devicon-c-plain-wordmark" title="C"></i>
-                        <i class="devicon-git-plain-wordmark" title="Git"></i>
-                        <i class="devicon-html5-plain-wordmark" title="HTML5"></i>
-                        <i class="devicon-css3-plain-wordmark" title="CSS3"></i>
-                        <i class="fa-brands fa-figma" title="Figma"></i>
-                        <i class="devicon-azuresqldatabase-plain" title="SQL"></i>
-                    </div> -->
                 </div>
                 <p class="section-paragraph center-spacing" id="skills-p">
                     I'm proficient in
@@ -243,55 +237,82 @@
                 </div>
                 <div class="grid">
                     <div class="vibe-cell" id="art">
-                        <img  src="images/vibe/david.jpg" alt="David image"/>
+                        <picture>
+                            <source srcset="webp/vibe/david.webp" type="image/webp">
+                            <img src="images/vibe/david.jpg" alt="David image"/>
+                        </picture>
                     </div>
                     <div class="vibe-cell" id="song">
-                        <!-- Creep -->
-                        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/70LcF31zb1H0PyJoS1Sx1r?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
-                        <!-- 4runner -->
-                        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/30Uu3CWjWfudnTGTIrw93V?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
-                        <!-- The Beach -->
-                        <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2u0CelO5c81XS7z3dGpHbS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
                         <!-- Echo Sax End -->
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3KQcjCQ5HytLSegg5QK9G4?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                     <div class="vibe-cell" id="desk">
                         <div class="image-wrapper">
-                            <img src="images/vibe/desk-light.jpeg" alt="Workspace light image" id="desk-light"/>
-                            <img src="images/vibe/desk-dark.jpeg" alt="Workspace dark image" id="desk-dark"/>
+                            <picture>
+                                <source srcset="webp/vibe/desk-light.webp" type="image/webp">
+                                <img src="images/vibe/desk-light.jpeg" alt="Workspace light image" id="desk-light"/>
+                            </picture>
+                            <picture>
+                                <source srcset="webp/vibe/desk-dark.webp" type="image/webp">
+                                <img src="images/vibe/desk-dark.jpeg" alt="Workspace dark image" id="desk-dark"/>
+                            </picture>
                         </div>
                         <div class="caption">[ This is my workspace ]</div>
                     </div>
                     <div class="vibe-cell" id="quote">
                         <p>"I do this not because it is easy, but because I thought it would be easy..."</p>
-                        <!-- <span>- probably an engineer</span> -->
+                        <!-- <span>- author</span> -->
                     </div>
                     <div class="vibe-cell" id="wide">
-                        <img  src="images/vibe/hill.jpeg" alt="Hill image"/>
+                        <picture>
+                            <source srcset="webp/vibe/hill.webp" type="image/webp">
+                            <img src="images/vibe/hill.jpeg" alt="Hill image"/>
+                        </picture>
                     </div>
                     <div class="vibe-cell filled" id="tree">
-                        <img  src="images/vibe/tree.jpeg" alt="Tree image"/>
+                        <picture>
+                            <source srcset="webp/vibe/tree.webp" type="image/webp">
+                            <img src="images/vibe/tree.jpeg" alt="Tree image"/>
+                        </picture>
                     </div>
                     <div class="vibe-cell" id="movie">
-                        <img  src="images/vibe/movie.png" alt="Movie image"/>
+                        <picture>
+                            <source srcset="webp/vibe/movie.webp" type="image/webp">
+                            <img src="images/vibe/movie.png" alt="Movie image"/>
+                        </picture>
                         <div class="caption">[ The last movie I watched ]</div>
                     </div>
                     <div class="vibe-cell" id="wallpaper">
-                        <img  src="images/vibe/wallpaper.png" alt="Wallpaper"/>
+                        <picture>
+                            <source srcset="webp/vibe/wallpaper.webp" type="image/webp">
+                            <img src="images/vibe/wallpaper.png" alt="Wallpaper"/>
+                        </picture>
                         <div class="caption">[ My wallpaper currently ]</div>
                     </div>
                     <div class="vibe-cell" id="create">
-                        <img  src="images/vibe/create.jpeg" alt="Create image"/>
+                        <picture>
+                            <source srcset="webp/vibe/create.webp" type="image/webp">
+                            <img src="images/vibe/create.jpeg" alt="Create image"/>
+                        </picture>
                     </div>
                     <div class="vibe-cell" id="book">
-                        <img  src="images/vibe/book.jpg" alt="Book image"/>
+                        <picture>
+                            <source srcset="webp/vibe/book.webp" type="image/webp">
+                            <img src="images/vibe/book.jpg" alt="Book image"/>
+                        </picture>
                         <div class="caption">[ The last book I read ]</div>
                     </div>
                     <div class="vibe-cell" id="meme">
-                        <img  src="images/vibe/meme.jpg" alt="Meme image"/>
+                        <picture>
+                            <source srcset="webp/vibe/meme.webp" type="image/webp">
+                            <img src="images/vibe/meme.jpg" alt="Meme image"/>
+                        </picture>
                     </div>
                     <div class="vibe-cell filled" id="me">
-                        <img  src="images/vibe/dolomites.jpg" alt="Me image"/>
+                        <picture>
+                            <source srcset="webp/vibe/dolomites.webp" type="image/webp">
+                            <img src="images/vibe/dolomites.jpg" alt="Me image"/>
+                        </picture>
                     </div>
                 </div>
             </section>
@@ -303,7 +324,10 @@
                 </div>
                 <div class="under-construction">
                     <h1>Coming soon!</h1>
-                    <img src="images/under_construction.png" alt="Under construction"/>
+                    <picture>
+                        <source srcset="webp/under_construction.webp" type="image/webp">
+                        <img src="images/under_construction.png" alt="Under construction"/>
+                    </picture>
                 </div>
             </section>
             <section id="contact-section">
@@ -445,7 +469,7 @@
             const imgWrapper = document.getElementById('image-wrapper');
             const linkEl = document.getElementById('project-link');
 
-            // Your project data
+            // Your project data (unchanged)
             const projectData = {
                 1: {
                     description: `
@@ -548,11 +572,9 @@
                 card.addEventListener('click', () => {
                     const projectId = card.getAttribute('projectID');
 
-                    // If clicking the currently selected card -> hide details, clear & deselect
                     if (currentProjectId === projectId) {
                         projectDetail.classList.add('hidden');
                         card.classList.remove('selected');
-                        // clear out the old content so nothing leaks through
                         descEl.innerHTML = '';
                         linkEl.href      = '';
                         linkEl.style.display = 'none';
@@ -560,29 +582,41 @@
                         return;
                     }
 
-                    // Otherwise, show the new project's details
                     const data = projectData[projectId];
                     if (!data) return;
 
                     descEl.innerHTML = data.description;
 
-                    imgWrapper.innerHTML = ""; // Clear previous content if any
+                    imgWrapper.innerHTML = ""; // Clear previous images
+
+                    const createPicture = (src, alt) => {
+                        const picture = document.createElement('picture');
+
+                        const webpSrc = `webp/${src.split('/').pop().replace(/\.(png|jpg|jpeg)$/, '.webp')}`;
+                        const source = document.createElement('source');
+                        source.srcset = webpSrc;
+                        source.type = 'image/webp';
+                        picture.appendChild(source);
+
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = alt;
+                        img.classList.add("project-img");
+                        picture.appendChild(img);
+
+                        return picture;
+                    };
+
                     if (Array.isArray(data.imgSrc)) {
                         data.imgSrc.forEach((src, idx) => {
-                            const img = document.createElement('img');
-                            img.src = src;
-                            img.alt = `Project ${projectId} Image ${idx + 1}`;
-                            img.classList.add("project-img");
-                            imgWrapper.appendChild(img);
+                            const picture = createPicture(src, `Project ${projectId} Image ${idx + 1}`);
+                            imgWrapper.appendChild(picture);
                         });
                     } else {
-                        const img = document.createElement('img');
-                        img.src = data.imgSrc;
-                        img.alt = `Project ${projectId} Image`;
-                        img.classList.add("project-img");
-                        imgWrapper.appendChild(img);
+                        const picture = createPicture(data.imgSrc, `Project ${projectId} Image`);
+                        imgWrapper.appendChild(picture);
                     }
-                    // Show or hide link depending on value
+
                     if (data.href === '-') {
                         linkEl.style.display = 'none';
                     } else {
@@ -592,7 +626,6 @@
 
                     projectDetail.classList.remove('hidden');
 
-                    // Update selected styles
                     if (currentProjectId) {
                         document
                             .querySelector(`.project-card[projectID="${currentProjectId}"]`)
@@ -601,7 +634,6 @@
                     card.classList.add('selected');
                     currentProjectId = projectId;
 
-                    // Center card in view horizontally
                     card.scrollIntoView({
                         behavior: 'smooth',
                         inline:   'center',
@@ -610,6 +642,7 @@
                 });
             });
         </script>
+
         <!-- Change setup image in Vibe as you scroll -->
         <script>
             document.addEventListener('DOMContentLoaded', () => {
