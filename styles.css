@@ -638,7 +638,7 @@ section {
 #team {
     grid-area: team;
     width: 100vw;
-    max-height: 40vh;
+    max-height: 45vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
