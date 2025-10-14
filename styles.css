@@ -176,7 +176,7 @@ section {
     font-size: clamp(48px, calc(9vw + 16px), 120px);
     color: var(--primary);
 }
-.under-construction img {
+.under-construction picture img {
     width: min(90%, 600px);
     height: auto;
 }
@@ -291,7 +291,7 @@ section {
     text-justify: inter-word;
 } */
 
-.image-wrapper {
+#about-me-section .image-wrapper {
     grid-area: img;
     height: 100%;
     padding: 0 4% 0 8%;
@@ -299,7 +299,7 @@ section {
     justify-content: center;
     align-items: flex-end;
 }
-.image-wrapper img {
+#about-me-section .image-wrapper picture img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
@@ -556,7 +556,102 @@ section {
     6. GAIA
 ===================================== */
 
+#gaia-section .grid {
+    display: grid;
+    grid-template-areas:
+    'text1 text1'
+    'quote photo'
+    'text2 photo'
+    'text3 link'
+    'text4 text4'
+    'team team';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto auto auto;
+    width: 100vw;
+    gap: min(3rem, 3vw);
+}
 
+#gaia-quote-container {
+    grid-area: quote;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: min(3rem, 3vw);
+    padding-right: calc(min(3rem, 3vw) - 2rem);
+}
+#gaia-quote {
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+    border-right: 3px solid var(--primary);
+    padding: 0 1rem;
+}
+
+#gaia-text1 {
+    grid-area: text1;
+    padding: 0 min(3rem, 3vw);
+}
+
+#gaia-text2 {
+    grid-area: text2;
+    padding-left: min(3rem, 3vw);
+}
+
+#gaia-text3 {
+    grid-area: text3;
+    padding-left: min(3rem, 3vw);
+}
+
+#gaia-text4 {
+    grid-area: text4;
+    padding: 0 min(3rem, 3vw);
+}
+
+#gaia-photo {
+    grid-area: photo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: min(3rem, 3vw);
+}
+#gaia-photo picture img {
+    width: 100%;
+    height: auto;
+}
+
+#gaia-link {
+    grid-area: link;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25% 0 calc(25% - 1rem);
+}
+#gaia-link picture img {
+    width: calc( 1.2 * max(200px, 18vw));
+    height: auto;
+}
+
+#team {
+    grid-area: team;
+    width: 100vw;
+    max-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    border-top: 0.1rem solid var(--secondary);
+    border-bottom: 0.1rem solid var(--secondary);
+}
+#team picture img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
 
 
 /* =====================================
@@ -639,7 +734,7 @@ section {
     overflow: hidden;
     position: relative;
 }
-#desk .image-wrapper img {
+#desk .image-wrapper picture img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -871,6 +966,61 @@ footer {
         'link';
         grid-template-columns: auto;
         grid-template-rows: auto auto auto;
+    }
+
+    /* GAIA */
+    #gaia-section .grid {
+        display: grid;
+        grid-template-areas:
+        'text1'
+        'quote'
+        'text2'
+        'photo'
+        'text3'
+        'team'
+        'text4'
+        'link';
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto auto auto auto;
+        gap: 3vh;
+    }
+    #gaia-quote-container {
+        grid-area: quote;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+    #gaia-text1 {
+        grid-area: text1;
+        padding: 0 min(3rem, 3vw);
+    }
+    #gaia-text2 {
+        grid-area: text2;
+        padding: 0 min(3rem, 3vw);
+    }
+    #gaia-text3 {
+        grid-area: text3;
+        padding: 0 min(3rem, 3vw);
+    }
+    #gaia-text4 {
+        grid-area: text4;
+        padding: 0 min(3rem, 3vw);
+    }
+    #gaia-photo {
+        grid-area: photo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 min(3rem, 3vw);
+    }
+    #gaia-link {
+        grid-area: link;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 25%;
     }
 
     /* Vibe */

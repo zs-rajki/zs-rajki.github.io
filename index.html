@@ -61,7 +61,7 @@
                     <div class="intro">
                         <span>[ INTRODUCTION ]</span>
                         <p class="section-paragraph">
-                            My name is <span>Zsombor Rajki</span>, a second-year <span>Computer Science</span> student at <span>Eindhoven University of Technology</span>.
+                            My name is <span>Zsombor Rajki</span>, a third-year <span>Computer Science</span> student at <span>Eindhoven University of Technology</span>.
                             I'm originally from Hungary and now based in the Netherlands.
                             I'm passionate about problem-solving, mathematics, and creating technology that combines functionality with thoughtful design.
                             My journey into computer science began with simple curiosity, which grew into a strong drive to learn, build, and challenge myself.
@@ -227,22 +227,60 @@
                     <h1>GAIA Robotics</h1>
                     <div id="after-line"></div>
                 </div>
-                <!-- <span class="card-header">[ Python, Computer Vision ]</span>
-                <h2 class="card-title">GAIA Robotics</h2>
-                <p class="card-description">Cleaning up beaches through technology</p>
-                3: {
-                    description: `
-                        In <span>September 2024</span>, I joined a student team at my university called <span>GAIA Robotics</span>.
-                        The team's mission is to develop autonomous robots that address environmental challenges such as coastal and urban cleaning, emergency response, demining post-war areas, reforestation, and more.
-                        I was drawn to the idea of using my <span>technical skills</span> to help <span>protect and restore our environment</span>.
-                        I am part of the <span>AI&ML department</span> (Artificial Intelligence & Machine Learning), where I work on <span>computer vision</span> and <span>image detection</span> for our prototype.
-                        Right now, we are focusing on <span>fine-tuning</span> a <span>YOLO</span> model and optimizing its performance on relatively simple hardware.
-                        This is a large-scale project that involves <span>extensive research</span>, <span>careful planning and coordination</span>, and <span>collaboration across multiple disciplines</span>.
-                        It's a great opportunity to learn <span>new skills</span>, tackle <span>real-life challenges</span> beyond the classroom, and collaborate with like-minded peers.
-                    `.trim(),
-                    imgSrc: "images/project3.png",
-                    href:   "https://www.teamgaia.nl"
-                }, -->
+                <div class="grid">
+                    <div id="gaia-quote-container">
+                        <div id="gaia-quote">
+                            "Cleaning up beaches through technology"
+                        </div>
+                    </div>
+                    <div class="section-paragraph" id="gaia-text1">
+                        GAIA Robotics has been a major part of my life lately and it is one of the larger projects I've been involved in.
+                        It is a <span>student team</span> at my university dedicated to developing CASTUS, an <span>autonomous robot</span>
+                        that collects trash from beaches and helps clean coastal areas, the perfect project in the intersection of technology, teamwork,
+                        and environmental responsibility.
+                    </div>
+                    <div class="section-paragraph" id="gaia-text2">
+                        I joined GAIA Robotics in <span>September 2024</span>, as a member of the <span>AI & Software department</span>.
+                        I worked on computer vision and object detection/classification, focusing on fine-tuning YOLO models
+                        and optimizing their performance on embedded hardware with limited computational resources.
+                        The goal was to design a vision system capable of recognizing and classifying different types of waste in real-world environments. 
+                    </div>
+                    <div class="section-paragraph" id="gaia-text3">
+                        In <span>September 2025</span>, I took on a new challenge by joining the board of the team as the new <span>Leader of AI & Software Department</span>. 
+                        In this role, I lead a team of students developing the robot's perception and decision-making systems, 
+                        integrating machine learning with software architecture and hardware control. We are currently focused on building our first fully functional prototype,
+                        combining research, cross-disciplinary collaboration, and hands-on experimentation.
+                    </div>
+                    <div class="section-paragraph" id="gaia-text4">
+                        Being part of GAIA Robotics has been an incredible experience, it has allowed me to apply theory to practice, develop leadership and technical skills,
+                        and contribute to a project that aligns with my passion for innovation and sustainability.
+                        <!-- It is more than just a university project: it is a team, a community, and a mission that continues to shape who I am as an engineer. -->
+                    </div>
+                    <div id="gaia-photo">
+                        <picture>
+                            <source srcset="webp/yolo.webp" type="image/webp">
+                            <img src="images/yolo.png" alt="YOLO test" />
+                        </picture>
+                    </div>
+                    <div id="gaia-link">
+                        <picture>
+                            <source srcset="webp/gaia_logo.webp" type="image/webp">
+                            <img src="images/gaia_logo.png" alt="GAIA logo" />
+                        </picture>
+                        <a id="project-link" href="https://teamgaia.nl/" target="_blank">
+                            <div>
+                                <span>Check it out!</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="team">
+                        <picture>
+                            <source srcset="webp/team.webp" type="image/webp">
+                            <img src="images/team.png" alt="Team GAIA" />
+                        </picture>
+                    </div>
+                </div>
             </section>
             <section id="vibe-section">
                 <div class="section-title">
@@ -361,12 +399,6 @@
                         </p>
                     </div>
                     <div class="links-wrapper">
-                        <a href="https://www.linkedin.com/in/zsombor-rajki-the-real-one/" target="_blank" title="Goes to LinkedIn">
-                            <div class="link" id="link1">
-                                <i class="devicon-linkedin-plain"></i>
-                                <h1>[ Check out my LinkedIn! ]</h1>
-                            </div>
-                        </a>
                         <a href="mailto:zs.rajki@gmail.com" target="_blank" title="zs.rajki@gmail.com">
                             <div class="link" id="link2">
                                 <i class="fa-solid fa-envelope"></i>
@@ -377,6 +409,12 @@
                             <div class="link" id="link3">
                                 <i class="devicon-github-original"></i>
                                 <h1>[ Explore my GitHub! ]</h1>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/zsombor-rajki-the-real-one/" target="_blank" title="Goes to LinkedIn">
+                            <div class="link" id="link1">
+                                <i class="devicon-linkedin-plain"></i>
+                                <h1>[ Check out my LinkedIn! ]</h1>
                             </div>
                         </a>
                         <a href="https://x.com/zs_rajki" target="_blank" title="Goes to X">
@@ -521,7 +559,7 @@
                         It also allows you to <span>edit or create puzzles</span>, use <span>undo/redo</span> while solving, and <span>save or load puzzle files</span> with your current state.
                         In the end, it became a fairly complex application, so we made sure to apply various <span>software design patterns</span> and <span>principles</span>, which was also one of the main goals of the assignment.
                     `.trim(),
-                    imgSrc: "images/project4.png",
+                    imgSrc: "images/project3.png",
                     href:   "-"
                 },
                 4: {
@@ -535,7 +573,7 @@
                         What amazed me most was how limitless creating it felt as I didn't really have to compromise on the design, even though it was my first time building a website from scratch.
                         That said, this is definitely one of those projects that will never truly be finished. I'm always finding small improvements and making changes here and there.
                     `.trim(),
-                    imgSrc: "images/project5.png",
+                    imgSrc: "images/project4.png",
                     href:   "https://github.com/zs-rajki/zs-rajki.github.io"
                 },
                 5: {
@@ -549,7 +587,7 @@
                         To ensure long-term sustainability, I also wrote clear <span>documentation</span> and helped optimize the code to minimize unnecessary server calls.
                         The dashboard was positively received during <span>usability testing</span>, and I'm proud that my contribution helped make the tool both <span>insightful</span> and <span>intuitive</span> for students seeking to improve their learning strategies.
                     `.trim(),
-                    imgSrc: ["images/project6.1.png", "images/project6.2.png"],
+                    imgSrc: ["images/project5.1.png", "images/project5.2.png"],
                     href:   "-"
                 },
                 6: {
@@ -562,7 +600,7 @@
                         a <span>React app</span> where you can draw a digit on a <span>28x28 grid</span> and watch how the <span>network predicts</span> it.
                         Since the <span>network dimensions</span> had to be constrained to make the visualization work well on all kinds of screens, the <span>accuracy</span> was limited. But because the main goal was <span>visualization</span>, this <span>trade-off</span> was absolutely worth it.
                         `.trim(),
-                    imgSrc: "images/project7.png",
+                    imgSrc: "images/project6.png",
                     href:   "https://www.zsrajki.com/nnvisualizer/"
                 }
             };
